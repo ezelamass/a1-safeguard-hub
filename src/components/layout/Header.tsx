@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button-variants";
 import { PRODUCTS } from "@/utils/constants";
 import * as icons from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,12 +35,10 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 z-50">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-primary-700 to-primary-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl md:text-2xl">A1</span>
-            </div>
+          <Link to="/" className="flex items-center space-x-3 z-50">
+            <img src={logo} alt="A1 Broker" className="w-10 h-10 md:w-12 md:h-12" />
             <span className="text-xl md:text-2xl font-bold text-gray-900">
-              Broker
+              A1 Broker
             </span>
           </Link>
 

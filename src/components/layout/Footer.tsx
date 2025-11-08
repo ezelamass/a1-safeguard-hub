@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export const Footer = () => {
   return (
@@ -8,11 +9,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-700 to-primary-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A1</span>
-              </div>
-              <span className="text-xl font-bold">Broker</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <img src={logo} alt="A1 Broker" className="w-10 h-10" />
+              <span className="text-xl font-bold">A1 Broker</span>
             </div>
             <p className="text-gray-400 mb-4">
               Soluciones integrales de seguros desde 2016. Matrícula SSN 84872.

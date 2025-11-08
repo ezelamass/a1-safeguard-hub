@@ -3,6 +3,7 @@ export const PRODUCTS = [
   { name: "Hogar", path: "/productos/hogar", icon: "Home" },
   { name: "Comercio", path: "/productos/comercio", icon: "Store" },
   { name: "Vida", path: "/productos/vida", icon: "Heart" },
+  { name: "Medicina Privada", path: "/medicina-prepaga", icon: "Stethoscope" },
   { name: "AP", path: "/productos/ap", icon: "Users" },
   { name: "Motos", path: "/productos/motos", icon: "Bike" },
   { name: "Integral", path: "/productos/integral", icon: "Shield" },

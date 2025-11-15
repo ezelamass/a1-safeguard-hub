@@ -42,23 +42,43 @@ export const HOW_IT_WORKS_STEPS = [
 
 export const FAQ_DATA = [
   {
-    question: "¿Cuánto tarda el proceso de cotización?",
-    answer: "El proceso es muy rápido. En menos de 2 minutos completás el formulario y en pocas horas recibís las mejores propuestas del mercado comparadas.",
+    question: "¿Por qué debería elegir un Bróker de Seguros en lugar de una aseguradora directa?",
+    answer: "Como Bróker independiente, nuestro compromiso es con usted. Analizamos el mercado de múltiples compañías para garantizar que obtenga la mejor cobertura al precio más competitivo. A diferencia de una aseguradora directa, somos su aliado y representante en caso de siniestro, gestionando todo el proceso por usted.",
   },
   {
-    question: "¿Tienen costo los servicios de asesoramiento?",
-    answer: "No, nuestro servicio de asesoramiento es completamente gratuito. Nos encargamos de buscar la mejor opción para vos sin costos adicionales.",
+    question: "¿El servicio de A1 Bróker tiene un costo adicional para mí?",
+    answer: "No. Nuestra remuneración se basa en comisiones que ya están incluidas en el precio final de la póliza, tal como lo haría cualquier aseguradora. Al contratarnos, usted obtiene asesoramiento experto y gestión de siniestros sin pagar un extra, asegurando que su póliza siempre esté optimizada.",
   },
   {
-    question: "¿Qué documentación necesito para contratar un seguro?",
-    answer: "La documentación varía según el tipo de seguro, pero generalmente necesitarás DNI, datos del bien a asegurar y completar un formulario. Te guiamos en todo el proceso.",
+    question: "¿Cómo debo proceder en caso de tener un siniestro?",
+    answer: "¡Lo primero es la calma! Contáctenos de inmediato por teléfono o a través de nuestra línea de WhatsApp. Nuestro equipo se encargará de guiarlo paso a paso, recopilar la documentación necesaria y realizar la denuncia formal ante la compañía. Nosotros gestionamos, usted se enfoca en resolver el imprevisto.",
   },
   {
-    question: "¿Puedo modificar mi póliza una vez contratada?",
-    answer: "Sí, podés modificar tu póliza en cualquier momento. Contactanos y te ayudamos con los cambios necesarios según tu nueva situación.",
+    question: "¿El seguro de auto que contrato cubre los daños causados por granizo o inundación?",
+    answer: "Depende del tipo de cobertura. Solo las pólizas Todo Riesgo y algunas opciones Terceros Completo incluyen cobertura por daños parciales o totales causados por fenómenos naturales. Si viaja o vive en zonas de riesgo, nuestro equipo (Lía) le aconsejará la mejor opción.",
   },
   {
-    question: "¿Trabajan con todas las aseguradoras?",
-    answer: "Trabajamos con las principales aseguradoras del país, lo que nos permite ofrecerte las mejores opciones y precios del mercado.",
+    question: "Si voy a dejar mi casa sola por vacaciones, ¿mi seguro de Hogar cubre ante un robo?",
+    answer: "Sí, la mayoría de nuestros seguros de Hogar incluyen cobertura de robo incluso si la propiedad está deshabitada temporalmente. Sin embargo, es vital cumplir con las condiciones de seguridad estipuladas en la póliza (alarmas, rejas, etc.). Consulte a Lía antes de viajar para verificar que su cobertura esté activa y cumpla con todos los requisitos.",
+  },
+  {
+    question: "¿Qué diferencia hay entre un Seguro de Vida y un Seguro de Ahorro?",
+    answer: "Un Seguro de Vida (Tradicional) protege económicamente a su familia en caso de su fallecimiento. Un Seguro de Ahorro combina esa protección básica con una herramienta de inversión y acumulación de capital a mediano o largo plazo (ideal para un retiro, un viaje o la educación). Sofía puede ayudarle a definir cuál se ajusta mejor a sus metas financieras.",
+  },
+  {
+    question: "¿A qué edad es recomendable empezar a planificar mi Retiro o Jubilación?",
+    answer: "¡Cuanto antes, mejor! La clave de la planificación es el tiempo. Empezar a los 30 años con una inversión menor es mucho más efectivo que empezar a los 50 con una inversión alta, gracias al poder del interés compuesto. Sofía le mostrará opciones de Retiro flexibles para que empiece hoy mismo.",
+  },
+  {
+    question: "¿Puedo cambiar de Prepaga si ya tengo una enfermedad preexistente o estoy embarazada?",
+    answer: "La ley protege sus derechos. Aunque el cambio de plan puede tener ciertas restricciones o periodos de carencia en coberturas específicas, no pueden negarle el ingreso a una Prepaga. Clara le asesorará para evaluar las opciones y negociar las mejores condiciones según su estado de salud.",
+  },
+  {
+    question: "¿Qué son los \"copagos\" y cómo afectan el costo de mi plan de salud?",
+    answer: "El copago es un monto fijo y reducido que usted abona por algunas prestaciones médicas (consultas o estudios). Los planes con copago suelen ser más económicos en la cuota mensual, pero implican un pequeño gasto cada vez que utiliza el servicio. Los planes sin copago tienen una cuota más alta, pero no generan gastos extras por el uso.",
+  },
+  {
+    question: "Si viajo dentro o fuera del país, ¿mi Prepaga me cubre la atención médica?",
+    answer: "El copago es un monto fijo y reducido que usted abona por algunas prestaciones médicas (consultas o estudios). Los planes con copago suelen ser más económicos en la cuota mensual, pero implican un pequeño gasto cada vez que se utiliza el servicio. Los planes sin copago tienen una cuota más alta, pero no generan gastos extras por el uso.",
   },
 ];

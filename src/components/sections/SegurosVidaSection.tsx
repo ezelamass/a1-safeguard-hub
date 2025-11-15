@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import segurosVidaImg from "@/assets/seguros-vida.jpg";
@@ -41,9 +42,12 @@ export const SegurosVidaSection = () => {
             <Button 
               size="lg" 
               className="mt-8 bg-accent-600 hover:bg-accent-500 text-white"
+              asChild
             >
-              Consultoría Personalizada
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <Link to="/cotizar">
+                Consultoría Personalizada
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
 

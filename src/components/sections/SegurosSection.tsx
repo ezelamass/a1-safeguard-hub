@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Shield, FileCheck, Scale, Users } from "lucide-react";
 import { Button } from "@/components/ui/button-variants";
+import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { fadeInUp, staggerContainer } from "@/utils/animations";
 
@@ -112,8 +113,9 @@ export const SegurosSection = () => {
             variant="primary"
             size="lg"
             className="bg-accent-600 hover:bg-accent-500"
+            asChild
           >
-            Cotizar Mis Seguros
+            <Link to="/cotizar">Cotizar Mis Seguros</Link>
           </Button>
         </motion.div>
       </div>

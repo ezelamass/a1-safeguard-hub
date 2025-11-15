@@ -13,14 +13,18 @@ export const Footer = () => {
               <img src={logo} alt="A1 Broker" className="w-10 h-10" />
               <span className="text-xl font-bold">A1 Broker</span>
             </div>
-            <p className="text-gray-400 mb-4">
-              Soluciones integrales de seguros desde 2016. Matrícula SSN 84872.
-            </p>
+            <p className="text-gray-400 mb-4">Soluciones integrales de seguros desde 2016. Matrícula SSN 84872.</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://www.facebook.com/a1brokerlife/"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://www.instagram.com/a1broker.life/"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -96,9 +100,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">
-                  Buenos Aires, Argentina
-                </span>
+                <span className="text-gray-400">Buenos Aires, Argentina</span>
               </li>
             </ul>
           </div>

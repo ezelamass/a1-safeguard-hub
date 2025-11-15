@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button-variants";
+import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Heart, TrendingUp, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -118,10 +119,10 @@ const MedicinaPrivada = () => {
                 className="mt-8"
               >
                 <Button variant="primary" size="lg" asChild>
-                  <a href="/contacto" className="inline-flex items-center space-x-2">
+                  <Link to="/cotizar" className="inline-flex items-center space-x-2">
                     <span>ANÁLISIS GRATUITO: Solicite una Consultoría</span>
                     <ArrowRight className="w-5 h-5" />
-                  </a>
+                  </Link>
                 </Button>
               </motion.div>
             </motion.div>

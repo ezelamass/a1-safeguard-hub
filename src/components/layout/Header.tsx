@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button-variants";
-import { PRODUCTS } from "@/utils/constants";
+import { MEDICINA_PREPAGA_ITEMS, SEGUROS_ITEMS, SEGUROS_VIDA_ITEMS } from "@/utils/constants";
 import * as icons from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -56,23 +56,73 @@ export const Header = () => {
               
               {isProductsOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl p-4 z-50"
+                  className="absolute top-full left-0 mt-2 w-[800px] bg-white rounded-xl shadow-xl p-6 z-50"
                   onMouseEnter={() => setIsProductsOpen(true)}
                   onMouseLeave={() => setIsProductsOpen(false)}
                 >
-                  <div className="grid grid-cols-2 gap-2">
-                    {PRODUCTS.map((product) => (
-                      <Link
-                        key={product.path}
-                        to={product.path}
-                        className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary-50 transition-colors"
-                      >
-                        {getIcon(product.icon)}
-                        <span className="text-sm font-medium text-gray-700">
-                          {product.name}
-                        </span>
-                      </Link>
-                    ))}
+                  <div className="grid grid-cols-3 gap-6">
+                    {/* Medicina Prepaga */}
+                    <div>
+                      <h3 className="text-xs font-bold text-gray-500 uppercase mb-3 tracking-wide">
+                        Medicina Prepaga
+                      </h3>
+                      <div className="space-y-1">
+                        {MEDICINA_PREPAGA_ITEMS.map((item) => (
+                          <Link
+                            key={item.path}
+                            to={item.path}
+                            className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary-50 transition-colors group"
+                          >
+                            {getIcon(item.icon)}
+                            <span className="text-sm font-medium text-gray-700 group-hover:text-primary-700">
+                              {item.name}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Seguros */}
+                    <div>
+                      <h3 className="text-xs font-bold text-gray-500 uppercase mb-3 tracking-wide">
+                        Seguros
+                      </h3>
+                      <div className="space-y-1 max-h-[400px] overflow-y-auto pr-2">
+                        {SEGUROS_ITEMS.map((item) => (
+                          <Link
+                            key={item.path}
+                            to={item.path}
+                            className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary-50 transition-colors group"
+                          >
+                            {getIcon(item.icon)}
+                            <span className="text-sm font-medium text-gray-700 group-hover:text-primary-700">
+                              {item.name}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Seguros de Vida */}
+                    <div>
+                      <h3 className="text-xs font-bold text-gray-500 uppercase mb-3 tracking-wide">
+                        Seguros de Vida
+                      </h3>
+                      <div className="space-y-1">
+                        {SEGUROS_VIDA_ITEMS.map((item) => (
+                          <Link
+                            key={item.path}
+                            to={item.path}
+                            className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary-50 transition-colors group"
+                          >
+                            {getIcon(item.icon)}
+                            <span className="text-sm font-medium text-gray-700 group-hover:text-primary-700">
+                              {item.name}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}
@@ -118,24 +168,71 @@ export const Header = () => {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 bg-white z-40 lg:hidden pt-20 overflow-y-auto">
           <nav className="container mx-auto px-4 py-8 space-y-6">
-            <div className="space-y-4">
-              <p className="text-sm font-semibold text-gray-500 uppercase">
-                Productos
-              </p>
-              <div className="grid grid-cols-2 gap-3">
-                {PRODUCTS.map((product) => (
-                  <Link
-                    key={product.path}
-                    to={product.path}
-                    className="flex items-center space-x-2 p-3 rounded-lg bg-gray-50 hover:bg-primary-50 transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {getIcon(product.icon)}
-                    <span className="text-sm font-medium text-gray-700">
-                      {product.name}
-                    </span>
-                  </Link>
-                ))}
+            <div className="space-y-6">
+              {/* Medicina Prepaga */}
+              <div>
+                <p className="text-sm font-semibold text-gray-500 uppercase mb-3">
+                  Medicina Prepaga
+                </p>
+                <div className="space-y-2">
+                  {MEDICINA_PREPAGA_ITEMS.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className="flex items-center space-x-2 p-3 rounded-lg bg-gray-50 hover:bg-primary-50 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {getIcon(item.icon)}
+                      <span className="text-sm font-medium text-gray-700">
+                        {item.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Seguros */}
+              <div>
+                <p className="text-sm font-semibold text-gray-500 uppercase mb-3">
+                  Seguros
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {SEGUROS_ITEMS.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className="flex items-center space-x-2 p-3 rounded-lg bg-gray-50 hover:bg-primary-50 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {getIcon(item.icon)}
+                      <span className="text-sm font-medium text-gray-700">
+                        {item.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Seguros de Vida */}
+              <div>
+                <p className="text-sm font-semibold text-gray-500 uppercase mb-3">
+                  Seguros de Vida
+                </p>
+                <div className="space-y-2">
+                  {SEGUROS_VIDA_ITEMS.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className="flex items-center space-x-2 p-3 rounded-lg bg-gray-50 hover:bg-primary-50 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {getIcon(item.icon)}
+                      <span className="text-sm font-medium text-gray-700">
+                        {item.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
 

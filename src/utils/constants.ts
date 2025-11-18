@@ -1,14 +1,38 @@
-export const PRODUCTS = [
-  { name: "Auto", path: "/productos/auto", icon: "Car" },
-  { name: "Hogar", path: "/productos/hogar", icon: "Home" },
-  { name: "Comercio", path: "/productos/comercio", icon: "Store" },
-  { name: "Vida", path: "/productos/vida", icon: "Heart" },
-  { name: "Medicina Privada", path: "/medicina-prepaga", icon: "Stethoscope" },
-  { name: "AP", path: "/productos/ap", icon: "Users" },
-  { name: "Motos", path: "/productos/motos", icon: "Bike" },
-  { name: "Integral", path: "/productos/integral", icon: "Shield" },
-  { name: "Caución", path: "/productos/caucion", icon: "FileCheck" },
-  { name: "Transporte", path: "/productos/transporte", icon: "Truck" },
+export const MEDICINA_PREPAGA_ITEMS = [
+  { name: "SWISS MEDICAL", path: "/medicina-prepaga/swiss-medical", icon: "Heart" },
+  { name: "GALENO", path: "/medicina-prepaga/galeno", icon: "Heart" },
+  { name: "PREVENCIÓN SALUD", path: "/medicina-prepaga/prevencion-salud", icon: "Heart" },
+  { name: "OMINT", path: "/medicina-prepaga/omint", icon: "Heart" },
+  { name: "SANCOR SALUD", path: "/medicina-prepaga/sancor-salud", icon: "Heart" },
+];
+
+export const SEGUROS_ITEMS = [
+  { name: "Autos", path: "/seguros/autos", icon: "Car" },
+  { name: "Motos", path: "/seguros/motos", icon: "Bike" },
+  { name: "Transporte", path: "/seguros/transporte", icon: "Truck" },
+  { name: "Bicicletas", path: "/seguros/bicicletas", icon: "Bike" },
+  { name: "Monopatines", path: "/seguros/monopatines", icon: "Bike" },
+  { name: "ART", path: "/seguros/art", icon: "Briefcase" },
+  { name: "Accidentes Personales", path: "/seguros/accidentes-personales", icon: "Users" },
+  { name: "Integral de Comercio", path: "/seguros/integral-comercio", icon: "Store" },
+  { name: "Combinado Familiar", path: "/seguros/combinado-familiar", icon: "Home" },
+  { name: "Incendio", path: "/seguros/incendio", icon: "Flame" },
+  { name: "Responsabilidad Civil", path: "/seguros/responsabilidad-civil", icon: "Shield" },
+  { name: "Cauciones", path: "/seguros/cauciones", icon: "FileCheck" },
+  { name: "TRO", path: "/seguros/tro", icon: "Shield" },
+  { name: "Asistencia al Viajero", path: "/seguros/asistencia-viajero", icon: "Plane" },
+  { name: "Salud", path: "/seguros/salud", icon: "Stethoscope" },
+  { name: "Sepelio", path: "/seguros/sepelio", icon: "Heart" },
+  { name: "Bolso Protegido", path: "/seguros/bolso-protegido", icon: "ShieldCheck" },
+  { name: "Celulares/Tablet/Notebook", path: "/seguros/tecnologia", icon: "Smartphone" },
+  { name: "Embarcaciones de Placer", path: "/seguros/embarcaciones", icon: "Ship" },
+  { name: "Flotas", path: "/seguros/flotas", icon: "Truck" },
+];
+
+export const SEGUROS_VIDA_ITEMS = [
+  { name: "Puro", path: "/seguros-vida/puro", icon: "Heart" },
+  { name: "Con ahorro", path: "/seguros-vida/con-ahorro", icon: "PiggyBank" },
+  { name: "De retiro", path: "/seguros-vida/de-retiro", icon: "TrendingUp" },
 ];
 
 export const INSURANCE_COMPANIES = [

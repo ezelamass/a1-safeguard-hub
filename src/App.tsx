@@ -9,6 +9,9 @@ import Contacto from "./pages/Contacto";
 import MedicinaPrivada from "./pages/MedicinaPrivada";
 import Cotizar from "./pages/Cotizar";
 import NotFound from "./pages/NotFound";
+import MedicinaPrepagas from "./pages/productos/MedicinaPrepagas";
+import Seguros from "./pages/productos/Seguros";
+import SegurosVida from "./pages/productos/SegurosVida";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +27,16 @@ const App = () => (
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/medicina-prepaga" element={<MedicinaPrivada />} />
           <Route path="/cotizar" element={<Cotizar />} />
+          
+          {/* Medicina Prepaga Routes */}
+          <Route path="/medicina-prepaga/:provider" element={<MedicinaPrepagas />} />
+          
+          {/* Seguros Routes */}
+          <Route path="/seguros/:type" element={<Seguros />} />
+          
+          {/* Seguros de Vida Routes */}
+          <Route path="/seguros-vida/:type" element={<SegurosVida />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { HOW_IT_WORKS_STEPS } from '@/utils/constants';
 import step1Image from '@/assets/step-1-quote.jpg';
 import step2Image from '@/assets/step-2-compare.jpg';
@@ -8,68 +8,162 @@ import step3Image from '@/assets/step-3-contract.jpg';
 const stepImages = [step1Image, step2Image, step3Image];
 
 export const HowItWorks = () => {
-  const { ref, inView } = useScrollAnimation();
+  const [activeStep, setActiveStep] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollSectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!scrollSectionRef.current) return;
+
+      const scrollTop = scrollSectionRef.current.scrollTop;
+      const sectionHeight = scrollSectionRef.current.clientHeight;
+
+      // Calculate which step should be active based on scroll position
+      const stepIndex = Math.min(
+        Math.floor(scrollTop / sectionHeight),
+        HOW_IT_WORKS_STEPS.length - 1
+      );
+
+      setActiveStep(stepIndex);
+    };
+
+    const scrollSection = scrollSectionRef.current;
+    if (scrollSection) {
+      scrollSection.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      if (scrollSection) {
+        scrollSection.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
+
+  const currentStep = HOW_IT_WORKS_STEPS[activeStep];
 
   return (
-    <section ref={ref} className="py-20 md:py-24 bg-azulNoche">
-      <div className="container mx-auto px-4">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Cómo Contratás tu Seguro
+    <section className="bg-white py-4 md:py-6">
+      {/* Header */}
+      <div className="container mx-auto px-4 mb-">
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Contratá tu seguro en tres simples pasos
           </h2>
-          <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-            Un proceso simple y transparente en 3 pasos
+          <p className="text-lg md:text-xl text-gray-600">
+            Un proceso simple y transparente
           </p>
-        </motion.div>
+        </div>
+      </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            {/* Connection line - visible only on desktop */}
-            <div className="hidden md:block absolute top-1/3 left-0 right-0 h-0.5 border-t-2 border-dashed border-primary-500/50 -z-10" />
+      {/* Fixed frame with scroll-driven content changes */}
+      <div className="relative">
+        {/* Invisible scroll container to capture scroll events */}
+        <div
+          ref={scrollSectionRef}
+          className="absolute inset-0 overflow-y-scroll opacity-0 pointer-events-auto"
+          style={{
+            height: '100vh',
+            scrollSnapType: 'y mandatory',
+          }}
+        >
+          {/* Create scroll sections for each step */}
+          {HOW_IT_WORKS_STEPS.map((_, index) => (
+            <div
+              key={index}
+              style={{
+                height: '100vh',
+                scrollSnapAlign: 'start',
+                scrollSnapStop: 'always',
+              }}
+            />
+          ))}
+        </div>
 
-            {HOW_IT_WORKS_STEPS.map((step, index) => (
-              <motion.div
-                key={step.number}
-                className="relative"
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-              >
-                <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:border-primary-500/50 transition-all">
-                  {/* Number badge */}
-                  <div className="absolute top-4 left-4 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary-600 text-white flex items-center justify-center z-10 shadow-lg">
-                    <span className="text-2xl md:text-3xl font-bold">
-                      {step.number}
-                    </span>
-                  </div>
-
-                  {/* Image */}
-                  <div className="aspect-video w-full overflow-hidden">
+        {/* Fixed visible content that changes based on scroll */}
+        <div
+          ref={containerRef}
+          className="container mx-auto px-4"
+          style={{ height: '100vh' }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 h-full items-center">
+            {/* Left side - Image */}
+            <div className="order-2 lg:order-1 flex items-center justify-center">
+              <div className="relative w-full max-w-lg">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeStep}
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 50 }}
+                    transition={{ duration: 0.5 }}
+                    className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl"
+                  >
                     <img
-                      src={stepImages[index]}
-                      alt={step.title}
+                      src={stepImages[activeStep]}
+                      alt={currentStep.title}
                       className="w-full h-full object-cover"
-                      loading="lazy"
                     />
-                  </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
 
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-base md:text-lg text-gray-200">
-                      {step.description}
-                    </p>
+            {/* Right side - Timeline with inline content */}
+            <div className="order-1 lg:order-2 flex items-center">
+              <div className="flex flex-col gap-0 w-full">
+                {/* Timeline with content appearing next to active step */}
+                {HOW_IT_WORKS_STEPS.map((s, i) => (
+                  <div key={s.number} className="flex items-start gap-6">
+                    {/* Step indicator column */}
+                    <div className="flex flex-col items-center">
+                      <motion.div
+                        className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg transition-all duration-300 flex-shrink-0 ${activeStep === i
+                          ? 'bg-primary-600 text-white shadow-lg'
+                          : activeStep > i
+                            ? 'bg-primary-200 text-primary-700'
+                            : 'bg-gray-200 text-gray-500'
+                          }`}
+                        animate={activeStep === i ? { scale: 1.1 } : { scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {s.number}
+                      </motion.div>
+
+                      {/* Connecting line */}
+                      {i < HOW_IT_WORKS_STEPS.length - 1 && (
+                        <div
+                          className={`w-0.5 flex-1 min-h-[120px] transition-all duration-300 ${activeStep > i ? 'bg-primary-400' : 'bg-gray-300'
+                            }`}
+                        />
+                      )}
+                    </div>
+
+                    {/* Content appears only next to active step */}
+                    <div className="flex-1 pb-8">
+                      <AnimatePresence mode="wait">
+                        {activeStep === i && (
+                          <motion.div
+                            key={`content-${i}`}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.5 }}
+                          >
+                            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                              {s.title}
+                            </h3>
+                            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                              {s.description}
+                            </p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

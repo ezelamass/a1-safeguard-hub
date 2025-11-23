@@ -112,7 +112,7 @@ export const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              © 2024 A1 Broker Seguros. Todos los derechos reservados.
+              © 2025 A1 Broker Seguros. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacidad" className="text-gray-400 hover:text-white transition-colors">

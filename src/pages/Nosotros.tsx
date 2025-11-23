@@ -84,7 +84,10 @@ const Nosotros = () => {
             </h2>
             <div className="prose prose-lg mx-auto text-gray-600 leading-relaxed">
               <p className="mb-4">
-                En A1 Broker, no solo vendemos pólizas; somos tus aliados estratégicos en la gestión de riesgos. Nacimos con una misión clara: simplificar el complejo mundo de los seguros y la salud, ofreciendo soluciones que realmente se ajustan a tu vida, tu familia y tu patrimonio.
+                En A1 Broker, no solo vendemos pólizas; somos tus aliados estratégicos en la gestión de riesgos. Nacimos con una misión clara:
+              </p>
+              <p className="mb-4">
+                Simplificar el complejo mundo de los seguros y la salud, ofreciendo soluciones que realmente se ajustan a tu vida, tu familia y tu patrimonio.
               </p>
               <p>
                 Entendemos que detrás de cada póliza hay una persona, un sueño, un negocio que proteger. Por eso, nuestro enfoque es 100% humano y centrado en la tranquilidad.
@@ -108,7 +111,7 @@ const Nosotros = () => {
               El Valor de Elegirnos: Por qué somos A1
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Como brókers independientes, nuestro compromiso es contigo, no con una única compañía. Esto nos da la libertad de analizar el mercado y presentar siempre las opciones más competitivas y con la mejor cobertura, garantizando que obtengas el mayor valor por tu inversión.
+              Como un Broker independiente, nuestro compromiso es contigo, no con una única compañía. Esto nos da la libertad de analizar el mercado y presentar siempre las opciones más competitivas y con la mejor cobertura, garantizando que obtengas el mayor valor por tu inversión.
             </p>
           </motion.div>
 

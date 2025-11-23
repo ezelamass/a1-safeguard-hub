@@ -48,8 +48,8 @@ export const AboutPreview = () => {
             <div className="space-y-4 text-base md:text-lg text-gray-200 mb-8">
               <p>
                 Somos A1 Broker Seguros, una empresa dedicada a brindar
-                soluciones integrales de seguros con más de 8 años de
-                experiencia en el mercado argentino.
+                soluciones integrales de seguros con más de 9 años de trayectoria
+                en el mercado argentino.
               </p>
               <p>
                 Con{" "}
@@ -64,7 +64,7 @@ export const AboutPreview = () => {
                 <span className="font-semibold text-white">
                   Matrícula SSN 84872
                 </span>{" "}
-                nos avala como broker registrado ante la Superintendencia de
+                nos avala como Broker registrado ante la Superintendencia de
                 Seguros de la Nación.
               </p>
             </div>

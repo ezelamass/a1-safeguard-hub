@@ -111,12 +111,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-  }
-
-  @font-face {
-    font-family: 'Inter';
-    font-display: swap;
-    src: local('Inter');
+    font-family: 'Montserrat', sans-serif;
   }
 }
 

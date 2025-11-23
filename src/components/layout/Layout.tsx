@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-azulNoche">
       <Header />
       <main className="flex-grow">{children}</main>
       <Footer />

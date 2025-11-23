@@ -210,9 +210,8 @@ export default function MedicinaPrepagas() {
                     </Label>
                     <select
                       {...register("relacion")}
-                      className={`w-full px-4 py-3 border-2 rounded-xl text-base ${
-                        errors.relacion ? "border-red-500" : "border-gray-200"
-                      } focus:border-primary-500 focus:ring-4 focus:ring-primary-100`}
+                      className={`w-full px-4 py-3 border-2 rounded-xl text-base ${errors.relacion ? "border-red-500" : "border-gray-200"
+                        } focus:border-primary-500 focus:ring-4 focus:ring-primary-100`}
                     >
                       <option value="">Seleccionar</option>
                       <option value="dependencia">Relación de dependencia</option>
@@ -251,7 +250,7 @@ export default function MedicinaPrepagas() {
                     </Button>
                     <Button
                       type="button"
-                      variant="secondary"
+                      variant="whatsapp"
                       size="lg"
                       onClick={handleWhatsApp}
                       className="flex-1 sm:flex-initial"

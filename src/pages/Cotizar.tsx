@@ -2,12 +2,12 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { 
-  User, 
-  Mail, 
-  ChevronDown, 
-  Send, 
-  CheckCircle2, 
+import {
+  User,
+  Mail,
+  ChevronDown,
+  Send,
+  CheckCircle2,
   Shield,
   MessageCircle,
   Phone,
@@ -20,18 +20,18 @@ const formSchema = z.object({
   nombre: z.string()
     .min(3, "El nombre debe tener al menos 3 caracteres")
     .max(100, "Máximo 100 caracteres"),
-  
+
   email: z.string()
     .email("Email inválido")
     .min(5, "Email muy corto"),
-  
+
   riesgo: z.string()
     .min(1, "Seleccioná un tipo de seguro"),
-  
+
   mensaje: z.string()
     .min(10, "El mensaje debe tener al menos 10 caracteres")
     .max(500, "Máximo 500 caracteres"),
-  
+
   terminos: z.boolean()
     .refine(val => val === true, "Debés aceptar los términos")
 });
@@ -42,9 +42,9 @@ const Cotizar = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [charCount, setCharCount] = useState(0);
 
-  const { 
-    register, 
-    handleSubmit, 
+  const {
+    register,
+    handleSubmit,
     formState: { errors, isSubmitting, isValid, touchedFields },
     watch
   } = useForm<FormData>({
@@ -66,12 +66,12 @@ const Cotizar = () => {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000));
     console.log("Form data:", data);
-    
+
     // Redirect to WhatsApp with form data
     const text = `Hola! Solicito una cotización:\n\nNombre: ${data.nombre}\nEmail: ${data.email}\nTipo: ${data.riesgo}\nMensaje: ${data.mensaje}`;
     const whatsappUrl = `https://wa.me/5491157388695?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
-    
+
     setIsSubmitted(true);
   };
 
@@ -165,16 +165,28 @@ const Cotizar = () => {
                             focus:outline-none`}
                         >
                           <option value="">Seleccioná un tipo de seguro</option>
-                          <option value="auto">🚗 Seguro de Auto</option>
-                          <option value="hogar">🏠 Seguro de Hogar</option>
-                          <option value="comercio">🏢 Seguro de Comercio</option>
-                          <option value="vida">❤️ Seguro de Vida</option>
-                          <option value="art">🏗️ ART (Riesgos del Trabajo)</option>
-                          <option value="prepaga">🏥 Medicina Prepaga</option>
-                          <option value="motos">🏍️ Seguro de Motos</option>
-                          <option value="integral">🛡️ Integral de Consorcio</option>
-                          <option value="caucion">📋 Caución</option>
+                          <option value="autos">🚗 Autos</option>
+                          <option value="motos">🏍️ Motos</option>
                           <option value="transporte">🚚 Transporte</option>
+                          <option value="bicicletas">🚲 Bicicletas</option>
+                          <option value="monopatines">🛴 Monopatines</option>
+                          <option value="art">💼 ART (Riesgos del Trabajo)</option>
+                          <option value="accidentes_personales">👥 Accidentes Personales</option>
+                          <option value="integral_comercio">🏪 Integral de Comercio</option>
+                          <option value="combinado_familiar">🏠 Combinado Familiar</option>
+                          <option value="incendio">🔥 Incendio</option>
+                          <option value="responsabilidad_civil">🛡️ Responsabilidad Civil</option>
+                          <option value="cauciones">📋 Cauciones</option>
+                          <option value="tro">🏭 TRO</option>
+                          <option value="asistencia_viajero">✈️ Asistencia al Viajero</option>
+                          <option value="salud">🩺 Salud</option>
+                          <option value="sepelio">🖤 Sepelio</option>
+                          <option value="bolso_protegido">👜 Bolso Protegido</option>
+                          <option value="tecnologia">📱 Tecnología</option>
+                          <option value="embarcaciones">🛥️ Embarcaciones</option>
+                          <option value="flotas">🚛 Flotas</option>
+                          <option value="prepaga">🏥 Medicina Prepaga</option>
+                          <option value="vida">❤️ Seguro de Vida</option>
                           <option value="otro">📦 Otro</option>
                         </select>
                         <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
@@ -227,7 +239,7 @@ const Cotizar = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting || !isValid}
-                      className="w-full mt-8 bg-gradient-to-r from-accent-600 to-accent-500 hover:from-accent-700 hover:to-accent-600 
+                      className="w-full mt-8 bg-gradient-to-r from-a1pink to-a1violet hover:opacity-90 hover:scale-105 
                         text-white font-semibold text-lg py-4 px-8 rounded-xl shadow-lg hover:shadow-xl 
                         transition-all duration-300 flex items-center justify-center gap-2
                         disabled:opacity-70 disabled:cursor-not-allowed"
@@ -303,8 +315,8 @@ const Cotizar = () => {
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
                   ¿Preferís contacto directo?
                 </h3>
-                
-                <a 
+
+                <a
                   href="https://wa.me/5491157388695"
                   target="_blank"
                   rel="noopener noreferrer"

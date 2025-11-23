@@ -112,7 +112,6 @@ export const SegurosSection = () => {
           <Button
             variant="primary"
             size="lg"
-            className="bg-accent-600 hover:bg-accent-500"
             asChild
           >
             <Link to="/cotizar">Cotizar Mis Seguros</Link>

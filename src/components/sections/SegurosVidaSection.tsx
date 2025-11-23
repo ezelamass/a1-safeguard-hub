@@ -22,11 +22,11 @@ export const SegurosVidaSection = () => {
             <span className="inline-block bg-primary-700/20 border border-primary-500/30 text-primary-300 px-4 py-1 rounded-full text-sm font-semibold mb-4">
               Protección Financiera Integral
             </span>
-            
+
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
               SEGUROS DE VIDA: Blindando la Estabilidad Financiera del Mañana
             </h2>
-            
+
             <div className="space-y-6 text-lg text-gray-200 leading-relaxed">
               <p>
                 Los Seguros de Personas constituyen la columna vertebral de cualquier planificación patrimonial seria. No son solo una cobertura, sino una herramienta financiera crucial diseñada para mitigar el riesgo de eventos imprevistos que puedan comprometer la solvencia y calidad de vida de sus dependientes.
@@ -39,9 +39,9 @@ export const SegurosVidaSection = () => {
               </p>
             </div>
 
-            <Button 
-              size="lg" 
-              className="mt-8 bg-accent-600 hover:bg-accent-500 text-white"
+            <Button
+              size="lg"
+              className="mt-8"
               asChild
             >
               <Link to="/cotizar">

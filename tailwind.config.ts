@@ -36,6 +36,10 @@ export default {
           500: "hsl(var(--accent-500))",
           100: "hsl(var(--accent-100))",
         },
+        a1pink: "#FF1493",
+        a1cyan: "#00CED1",
+        a1violet: "#8A2BE2",
+        a1yellow: "#FFD700",
         gray: {
           950: "hsl(var(--gray-950))",
           900: "hsl(var(--gray-900))",
@@ -148,6 +152,10 @@ export default {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0)" },
         },
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -157,6 +165,7 @@ export default {
         "scale-in": "scale-in 0.2s ease-out",
         "float": "float 3s ease-in-out infinite",
         "slide-in-right": "slide-in-right 0.3s ease-out",
+        scroll: "scroll 30s linear infinite",
       },
     },
   },

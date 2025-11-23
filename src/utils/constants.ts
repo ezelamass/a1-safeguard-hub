@@ -1,9 +1,9 @@
 export const MEDICINA_PREPAGA_ITEMS = [
-  { name: "SWISS MEDICAL", path: "/medicina-prepaga/swiss-medical", icon: "Heart" },
-  { name: "GALENO", path: "/medicina-prepaga/galeno", icon: "Heart" },
-  { name: "PREVENCIÓN SALUD", path: "/medicina-prepaga/prevencion-salud", icon: "Heart" },
-  { name: "OMINT", path: "/medicina-prepaga/omint", icon: "Heart" },
-  { name: "SANCOR SALUD", path: "/medicina-prepaga/sancor-salud", icon: "Heart" },
+  { name: "Swiss Medical", path: "/medicina-prepaga/swiss-medical", icon: "Heart" },
+  { name: "Galeno", path: "/medicina-prepaga/galeno", icon: "Heart" },
+  { name: "Prevención Salud", path: "/medicina-prepaga/prevencion-salud", icon: "Heart" },
+  { name: "Omint", path: "/medicina-prepaga/omint", icon: "Heart" },
+  { name: "Sancor Salud", path: "/medicina-prepaga/sancor-salud", icon: "Heart" },
 ];
 
 export const SEGUROS_ITEMS = [
@@ -24,15 +24,15 @@ export const SEGUROS_ITEMS = [
   { name: "Salud", path: "/seguros/salud", icon: "Stethoscope" },
   { name: "Sepelio", path: "/seguros/sepelio", icon: "Heart" },
   { name: "Bolso Protegido", path: "/seguros/bolso-protegido", icon: "ShieldCheck" },
-  { name: "Celulares/Tablet/Notebook", path: "/seguros/tecnologia", icon: "Smartphone" },
-  { name: "Embarcaciones de Placer", path: "/seguros/embarcaciones", icon: "Ship" },
+  { name: "Tecnología", path: "/seguros/tecnologia", icon: "Smartphone" },
+  { name: "Embarcaciones", path: "/seguros/embarcaciones", icon: "Ship" },
   { name: "Flotas", path: "/seguros/flotas", icon: "Truck" },
 ];
 
 export const SEGUROS_VIDA_ITEMS = [
-  { name: "Puro", path: "/seguros-vida/puro", icon: "Heart" },
-  { name: "Con ahorro", path: "/seguros-vida/con-ahorro", icon: "PiggyBank" },
-  { name: "De retiro", path: "/seguros-vida/de-retiro", icon: "TrendingUp" },
+  { name: "Vida con Ahorro y Capitalización", path: "/seguros-vida/con-ahorro", icon: "PiggyBank" },
+  { name: "Seguros de Retiro", path: "/seguros-vida/de-retiro", icon: "TrendingUp" },
+  { name: "Vida Puro", path: "/seguros-vida/puro", icon: "Heart" },
 ];
 
 export const INSURANCE_COMPANIES = [

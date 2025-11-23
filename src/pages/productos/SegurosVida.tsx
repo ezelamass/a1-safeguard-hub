@@ -194,9 +194,8 @@ export default function SegurosVida() {
                     </Label>
                     <select
                       {...register("fuma")}
-                      className={`w-full px-4 py-3 border-2 rounded-xl text-base ${
-                        errors.fuma ? "border-red-500" : "border-gray-200"
-                      } focus:border-primary-500 focus:ring-4 focus:ring-primary-100`}
+                      className={`w-full px-4 py-3 border-2 rounded-xl text-base ${errors.fuma ? "border-red-500" : "border-gray-200"
+                        } focus:border-primary-500 focus:ring-4 focus:ring-primary-100`}
                     >
                       <option value="">Seleccionar</option>
                       <option value="si">Sí</option>
@@ -235,7 +234,7 @@ export default function SegurosVida() {
                     </Button>
                     <Button
                       type="button"
-                      variant="secondary"
+                      variant="whatsapp"
                       size="lg"
                       onClick={handleWhatsApp}
                       className="flex-1 sm:flex-initial"

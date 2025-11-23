@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button-variants";
 import { MEDICINA_PREPAGA_ITEMS, SEGUROS_ITEMS, SEGUROS_VIDA_ITEMS } from "@/utils/constants";
 import * as icons from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/favicon.png";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,27 +27,28 @@ export const Header = () => {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-white/95 backdrop-blur-md shadow-md"
-        : "bg-white/95 backdrop-blur-md shadow-sm"
+        ? "shadow-md"
+        : "shadow-sm"
         }`}
+      style={{ backgroundColor: '#FEFEFE' }}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex flex-col items-center gap-2 z-50">
-            <img src={logo} alt="A1 Broker" className="w-10 h-10 md:w-12 md:h-12" />
-            <span className="text-xl md:text-2xl font-bold text-gray-900">
-              A1 Broker
-            </span>
+          <Link to="/" className="flex items-center z-50">
+            <img src={logo} alt="A1 Broker" className="h-10 w-auto md:h-20 object-contain" />
+
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <div className="relative group">
+            <div
+              className="relative group"
+              onMouseEnter={() => setIsProductsOpen(true)}
+              onMouseLeave={() => setIsProductsOpen(false)}
+            >
               <button
                 className="flex items-center space-x-1 text-base font-medium text-gray-700 hover:text-primary-700 transition-colors"
-                onMouseEnter={() => setIsProductsOpen(true)}
-                onMouseLeave={() => setIsProductsOpen(false)}
               >
                 <span>Productos</span>
                 <ChevronDown className="w-4 h-4" />
@@ -56,8 +57,6 @@ export const Header = () => {
               {isProductsOpen && (
                 <div
                   className="absolute top-full left-0 mt-2 w-[1000px] bg-white rounded-xl shadow-xl z-50 overflow-hidden border border-gray-100"
-                  onMouseEnter={() => setIsProductsOpen(true)}
-                  onMouseLeave={() => setIsProductsOpen(false)}
                 >
                   <div className="grid grid-cols-3">
                     {/* Column 1: Seguros */}

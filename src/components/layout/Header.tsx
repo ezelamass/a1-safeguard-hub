@@ -35,7 +35,7 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 z-50">
+          <Link to="/" className="flex flex-col items-center gap-2 z-50">
             <img src={logo} alt="A1 Broker" className="w-10 h-10 md:w-12 md:h-12" />
             <span className="text-xl md:text-2xl font-bold text-gray-900">
               A1 Broker

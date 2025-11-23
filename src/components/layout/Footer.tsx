@@ -9,7 +9,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
+            <div className="flex flex-col items-center gap-2 mb-4">
               <img src={logo} alt="A1 Broker" className="w-10 h-10" />
               <span className="text-xl font-bold">A1 Broker</span>
             </div>

@@ -5,6 +5,7 @@ import { SegurosSection } from "@/components/sections/SegurosSection";
 import { SegurosVidaSection } from "@/components/sections/SegurosVidaSection";
 import { CredencialesSection } from "@/components/sections/CredencialesSection";
 import { AboutPreview } from "@/components/sections/AboutPreview";
+import { EnterpriseValue } from "@/components/sections/EnterpriseValue";
 import { FAQ } from "@/components/sections/FAQ";
 import { Layout } from "@/components/layout/Layout";
 
@@ -18,6 +19,7 @@ const Home = () => {
       <SegurosVidaSection />
       <CredencialesSection />
       <AboutPreview />
+      <EnterpriseValue />
       <FAQ />
     </Layout>
   );

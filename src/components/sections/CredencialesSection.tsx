@@ -29,13 +29,13 @@ export const CredencialesSection = () => {
   const { ref, inView } = useScrollAnimation(0.2);
 
   return (
-    <section ref={ref} className="py-20 bg-gray-50">
+    <section ref={ref} className="py-20 bg-azulNoche">
       <div className="max-w-5xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-12"
+          className="text-4xl lg:text-5xl font-bold text-white text-center mb-12"
         >
           Por Qué Confiar en A1 Broker
         </motion.h2>
@@ -49,13 +49,13 @@ export const CredencialesSection = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-primary-600 hover:shadow-md transition-shadow"
+                className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl shadow-sm border-l-4 border-primary-500 hover:bg-gray-900/70 transition-all"
               >
-                <Icon className="w-12 h-12 text-primary-600 mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <Icon className="w-12 h-12 text-primary-300 mb-4" />
+                <h3 className="text-xl font-bold text-white mb-3">
                   {credential.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   {credential.description}
                 </p>
               </motion.div>

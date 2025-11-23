@@ -11,7 +11,7 @@ export const HowItWorks = () => {
   const { ref, inView } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-20 md:py-24 bg-white">
+    <section ref={ref} className="py-20 md:py-24 bg-azulNoche">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-16"
@@ -19,10 +19,10 @@ export const HowItWorks = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Cómo Contratás tu Seguro
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
             Un proceso simple y transparente en 3 pasos
           </p>
         </motion.div>
@@ -30,7 +30,7 @@ export const HowItWorks = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             {/* Connection line - visible only on desktop */}
-            <div className="hidden md:block absolute top-1/3 left-0 right-0 h-0.5 border-t-2 border-dashed border-primary-300 -z-10" />
+            <div className="hidden md:block absolute top-1/3 left-0 right-0 h-0.5 border-t-2 border-dashed border-primary-500/50 -z-10" />
 
             {HOW_IT_WORKS_STEPS.map((step, index) => (
               <motion.div
@@ -40,7 +40,7 @@ export const HowItWorks = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:border-primary-500/50 transition-all">
                   {/* Number badge */}
                   <div className="absolute top-4 left-4 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary-600 text-white flex items-center justify-center z-10 shadow-lg">
                     <span className="text-2xl md:text-3xl font-bold">
@@ -60,10 +60,10 @@ export const HowItWorks = () => {
 
                   {/* Content */}
                   <div className="p-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-base md:text-lg text-gray-600">
+                    <p className="text-base md:text-lg text-gray-200">
                       {step.description}
                     </p>
                   </div>

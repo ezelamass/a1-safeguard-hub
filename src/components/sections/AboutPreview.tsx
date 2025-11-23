@@ -9,7 +9,7 @@ export const AboutPreview = () => {
   const { ref, inView } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-20 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section ref={ref} className="py-20 md:py-24 bg-azulNoche">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Image */}
@@ -37,15 +37,15 @@ export const AboutPreview = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="order-1 lg:order-2"
           >
-            <div className="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block bg-primary-700/20 border border-primary-500/30 text-primary-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               Desde 2016
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Quiénes Somos
             </h2>
 
-            <div className="space-y-4 text-base md:text-lg text-gray-600 mb-8">
+            <div className="space-y-4 text-base md:text-lg text-gray-200 mb-8">
               <p>
                 Somos A1 Broker Seguros, una empresa dedicada a brindar
                 soluciones integrales de seguros con más de 8 años de
@@ -53,7 +53,7 @@ export const AboutPreview = () => {
               </p>
               <p>
                 Con{" "}
-                <span className="font-semibold text-primary-700">
+                <span className="font-semibold text-primary-300">
                   más de 25,000 clientes satisfechos
                 </span>
                 , nos especializamos en encontrar la mejor cobertura al mejor
@@ -61,7 +61,7 @@ export const AboutPreview = () => {
               </p>
               <p>
                 Nuestra{" "}
-                <span className="font-semibold text-gray-900">
+                <span className="font-semibold text-white">
                   Matrícula SSN 84872
                 </span>{" "}
                 nos avala como broker registrado ante la Superintendencia de

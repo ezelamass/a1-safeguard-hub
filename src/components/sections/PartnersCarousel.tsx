@@ -9,10 +9,10 @@ export const PartnersCarousel = () => {
   const { ref, inView } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-12 md:py-16 bg-gray-50">
+    <section ref={ref} className="py-12 md:py-16 bg-azulNoche">
       <div className="container mx-auto px-4">
         <motion.h2
-          className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-8 md:mb-12"
+          className="text-2xl md:text-3xl font-bold text-center text-white mb-8 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -49,8 +49,8 @@ export const PartnersCarousel = () => {
           >
             {INSURANCE_COMPANIES.map((company, index) => (
               <SwiperSlide key={index}>
-                <div className="flex items-center justify-center h-16 md:h-20 px-4 py-2 bg-white rounded-lg shadow-sm transition-all hover:shadow-md grayscale hover:grayscale-0">
-                  <span className="text-base md:text-lg font-semibold text-gray-700">
+                <div className="flex items-center justify-center h-16 md:h-20 px-4 py-2 bg-gray-900/50 backdrop-blur-sm rounded-lg border border-gray-700/50 shadow-sm transition-all hover:bg-gray-900/70 hover:border-primary-500/50">
+                  <span className="text-base md:text-lg font-semibold text-gray-200">
                     {company}
                   </span>
                 </div>

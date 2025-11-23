@@ -6,9 +6,9 @@ export const Hero = () => {
   return <section className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-700 via-primary-600 to-primary-500 opacity-90" />
+        <div className="absolute inset-0 bg-azulNoche/85" />
         <img src={heroImage} alt="A1 Broker Seguros" className="w-full h-full object-cover" loading="eager" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/60 via-primary-700/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-azulNoche/90 via-primary-700/30 to-transparent" />
       </div>
 
       {/* Floating shapes */}

@@ -143,4 +143,44 @@ All colors MUST be HSL.
   .gradient-text {
     @apply bg-gradient-to-r from-primary-700 via-primary-500 to-accent-500 bg-clip-text text-transparent;
   }
+
+  /* Glow Pulse Animations */
+  @keyframes glow-pulse-blue {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(96, 165, 250, 0.4), 0 0 40px rgba(96, 165, 250, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(96, 165, 250, 0.6), 0 0 60px rgba(96, 165, 250, 0.3);
+    }
+  }
+
+  @keyframes glow-pulse-violet {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(167, 139, 250, 0.4), 0 0 40px rgba(167, 139, 250, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(167, 139, 250, 0.6), 0 0 60px rgba(167, 139, 250, 0.3);
+    }
+  }
+
+  @keyframes glow-pulse-pink {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(244, 114, 182, 0.4), 0 0 40px rgba(244, 114, 182, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(244, 114, 182, 0.6), 0 0 60px rgba(244, 114, 182, 0.3);
+    }
+  }
+
+  .animate-glow-pulse-blue {
+    animation: glow-pulse-blue 2s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse-violet {
+    animation: glow-pulse-violet 2s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse-pink {
+    animation: glow-pulse-pink 2s ease-in-out infinite;
+  }
 }

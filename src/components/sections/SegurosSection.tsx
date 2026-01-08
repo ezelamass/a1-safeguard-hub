@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import { Shield, FileCheck, Scale, Users } from "lucide-react";
+import { Shield, FileCheck, Scale, Users, Building } from "lucide-react";
 import { Button } from "@/components/ui/button-variants";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { fadeInUp, staggerContainer } from "@/utils/animations";
-
 const pillars = [
   {
     icon: Shield,
@@ -53,12 +52,13 @@ export const SegurosSection = () => {
           variants={staggerContainer}
           className="max-w-4xl mx-auto text-center mb-16"
         >
-          <motion.p
-            variants={fadeInUp}
-            className="text-accent-400 text-sm font-semibold uppercase tracking-wider mb-4"
-          >
-            SEGUROS PATRIMONIALES
-          </motion.p>
+          {/* Badge */}
+          <motion.div variants={fadeInUp} className="flex justify-center mb-6">
+            <span className="inline-flex items-center gap-2 bg-accent-400/10 border border-accent-400/30 text-accent-400 px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wider">
+              <Building className="w-4 h-4" />
+              Seguros Patrimoniales
+            </span>
+          </motion.div>
 
           <motion.h2
             variants={fadeInUp}

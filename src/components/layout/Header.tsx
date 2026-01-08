@@ -62,7 +62,7 @@ export const Header = () => {
 
               {isProductsOpen && (
                 <div
-                  className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 w-[900px] max-w-[90vw] bg-azulNoche/98 backdrop-blur-xl rounded-xl shadow-2xl shadow-black/30 z-50 overflow-hidden border border-white/15 animate-fade-in"
+                  className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 w-[900px] max-w-[90vw] bg-azulNoche backdrop-blur-xl rounded-xl shadow-2xl shadow-black/30 z-50 overflow-hidden border border-white/15 animate-fade-in"
                 >
                   <div className="grid grid-cols-3">
                     {/* Column 1: Seguros */}

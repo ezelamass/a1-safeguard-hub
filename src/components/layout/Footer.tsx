@@ -1,34 +1,25 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
-import logoFooter from "@/assets/logo-footer.png";
-
+import logo from "@/assets/logo.png";
 export const Footer = () => {
-  return (
-    <footer className="bg-gray-900 text-white">
+  return <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Company Info */}
           <div>
-            <div className="mb-4">
-              <img src={logoFooter} alt="A1 Broker" className="h-24 w-auto rounded-xl" />
+            <div className="flex flex-col items-center gap-2 mb-4">
+              <img src={logo} alt="A1 Broker" className="w-10 h-10" />
+              <span className="text-xl font-bold">A1 Broker</span>
             </div>
             <p className="text-gray-400 mb-4">Soluciones integrales de seguros desde 2016. Matrícula SSN 84872.</p>
             <div className="flex space-x-4">
-              <a
-                href="https://www.facebook.com/a1brokerlife/"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
+              <a href="https://www.facebook.com/a1brokerlife/" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a
-                href="https://www.instagram.com/a1broker.life/"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
+              <a href="https://www.instagram.com/a1broker.life/" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
+              
             </div>
           </div>
 
@@ -124,6 +115,5 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };

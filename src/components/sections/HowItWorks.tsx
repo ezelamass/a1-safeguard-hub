@@ -1,11 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HOW_IT_WORKS_STEPS } from '@/utils/constants';
-import step1Image from '@/assets/step-1-quote.jpg';
-import step2Image from '@/assets/step-2-compare.jpg';
-import step3Image from '@/assets/step-3-contract.jpg';
 
-const stepImages = [step1Image, step2Image, step3Image];
+const stepImages = ['/steps/step-1.png', '/steps/step-2.png', '/steps/step-3.png'];
 
 export const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(0);

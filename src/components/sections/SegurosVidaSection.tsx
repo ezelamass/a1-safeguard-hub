@@ -49,8 +49,8 @@ export const SegurosVidaSection = () => {
         >
           {/* Badge */}
           <motion.div variants={fadeInUp} className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-900/90 to-violet-800/90 border border-a1violet/50 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider animate-glow-pulse-violet">
-              <Users className="w-4 h-4 text-a1violet" />
+            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-900/90 to-violet-800/90 border border-white/50 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider animate-glow-pulse-violet">
+              <Users className="w-4 h-4 text-white" />
               Seguros de Vida
             </span>
           </motion.div>
@@ -101,7 +101,7 @@ export const SegurosVidaSection = () => {
                 variants={fadeInUp}
                 className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:bg-white/15 transition-all duration-300 group"
               >
-                <feature.icon className="w-10 h-10 text-a1violet mb-4 group-hover:scale-110 transition-transform" />
+                <feature.icon className="w-10 h-10 text-white mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold text-white mb-3">
                   {feature.title}
                 </h3>

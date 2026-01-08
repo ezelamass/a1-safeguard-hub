@@ -46,20 +46,23 @@ export const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <div
-              className="relative group"
+              className="relative"
               onMouseEnter={() => setIsProductsOpen(true)}
               onMouseLeave={() => setIsProductsOpen(false)}
             >
               <button
-                className="flex items-center space-x-1 text-base font-medium text-white/80 hover:text-white transition-colors"
+                className="flex items-center space-x-1 text-base font-medium text-white/80 hover:text-white transition-colors py-2"
               >
                 <span>Productos</span>
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProductsOpen ? 'rotate-180' : ''}`} />
               </button>
+
+              {/* Invisible bridge to prevent gap */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 h-2 w-full" />
 
               {isProductsOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-[1000px] bg-azulNoche/95 backdrop-blur-md rounded-xl shadow-xl z-50 overflow-hidden border border-white/10"
+                  className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 w-[900px] max-w-[90vw] bg-azulNoche/98 backdrop-blur-xl rounded-xl shadow-2xl shadow-black/30 z-50 overflow-hidden border border-white/15 animate-fade-in"
                 >
                   <div className="grid grid-cols-3">
                     {/* Column 1: Seguros */}

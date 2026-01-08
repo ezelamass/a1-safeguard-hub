@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import MedicinaPrepagas from "./pages/productos/MedicinaPrepagas";
 import Seguros from "./pages/productos/Seguros";
 import SegurosVida from "./pages/productos/SegurosVida";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/nosotros" element={<Nosotros />} />

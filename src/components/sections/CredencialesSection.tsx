@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import { BadgeCheck, TrendingUp, Target, Headphones } from "lucide-react";
+import { BadgeCheck, TrendingUp, Target, Headphones, ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Button } from "@/components/ui/button-variants";
+import { Link } from "react-router-dom";
 
 const credentials = [
   {
@@ -62,6 +64,21 @@ export const CredencialesSection = () => {
             );
           })}
         </div>
+
+        {/* Conocenos Más Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="text-center mt-12"
+        >
+          <Button variant="outline" size="lg" asChild>
+            <Link to="/nosotros" className="group">
+              Conocenos Más
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

@@ -10,7 +10,7 @@ export const Hero = () => {
       <div className="container mx-auto px-4 py-12 z-10 relative">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Left side - Text content */}
-          <div className="flex-1 max-w-xl text-center lg:text-left">
+          <div className="flex-1 max-w-xl text-center lg:text-left mt-16 lg:mt-0">
             <motion.p
               className="text-sm md:text-base font-medium text-gray-400 mb-4 tracking-wide"
               initial={{ opacity: 0, y: 20 }}

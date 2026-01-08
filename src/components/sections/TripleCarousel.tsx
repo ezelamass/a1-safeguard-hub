@@ -39,8 +39,8 @@ const CAROUSEL_IMAGES = [
 
 // Split images into 3 columns
 const column1 = CAROUSEL_IMAGES.slice(0, 11);
-const column2 = CAROUSEL_IMAGES.slice(11, 22);
-const column3 = CAROUSEL_IMAGES.slice(22, 33);
+const column2 = CAROUSEL_IMAGES.slice(22, 33);
+const column3 = CAROUSEL_IMAGES.slice(11, 22);
 
 interface CarouselColumnProps {
   images: string[];

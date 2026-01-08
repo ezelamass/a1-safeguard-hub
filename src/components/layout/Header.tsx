@@ -76,6 +76,7 @@ export const Header = () => {
                           <Link
                             key={item.path}
                             to={item.path}
+                            onClick={() => setIsProductsOpen(false)}
                             className="flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-all duration-200 group"
                           >
                             <span className="text-gray-400 group-hover:text-primary-400 transition-colors">
@@ -100,6 +101,7 @@ export const Header = () => {
                           <Link
                             key={item.path}
                             to={item.path}
+                            onClick={() => setIsProductsOpen(false)}
                             className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
                           >
                             <span className="text-gray-400 group-hover:text-a1pink transition-colors">
@@ -124,6 +126,7 @@ export const Header = () => {
                           <Link
                             key={item.path}
                             to={item.path}
+                            onClick={() => setIsProductsOpen(false)}
                             className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
                           >
                             <span className="text-gray-400 group-hover:text-a1violet transition-colors">
@@ -136,12 +139,16 @@ export const Header = () => {
                         ))}
                       </div>
 
-                      <div className="mt-8 p-4 bg-white/5 rounded-xl border border-white/10">
-                        <p className="text-xs font-medium text-gray-400 mb-2">¿Necesitás asesoramiento?</p>
-                        <Link to="/contacto" className="text-sm font-bold text-primary-400 hover:text-primary-300 flex items-center gap-1">
-                          Hablá con un experto <icons.ArrowRight className="w-4 h-4" />
-                        </Link>
-                      </div>
+                        <div className="mt-8 p-4 bg-white/5 rounded-xl border border-white/10">
+                          <p className="text-xs font-medium text-gray-400 mb-2">¿Necesitás asesoramiento?</p>
+                          <Link 
+                            to="/contacto" 
+                            onClick={() => setIsProductsOpen(false)}
+                            className="text-sm font-bold text-primary-400 hover:text-primary-300 flex items-center gap-1"
+                          >
+                            Hablá con un experto <icons.ArrowRight className="w-4 h-4" />
+                          </Link>
+                        </div>
                     </div>
                   </div>
                 </div>

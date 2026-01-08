@@ -9,7 +9,7 @@ import {
     ShieldAlert,
     Headset,
     Calendar,
-    CheckCircle2
+    Building2
 } from 'lucide-react';
 
 const BENEFITS = [
@@ -63,7 +63,8 @@ export const EnterpriseValue = () => {
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="inline-block py-1 px-3 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-sm font-semibold mb-4">
+                        <span className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-900/90 to-teal-800/90 border border-emerald-400/50 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider animate-glow-pulse-emerald">
+                            <Building2 className="w-4 h-4 text-emerald-400" />
                             Soluciones para Empresas
                         </span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">

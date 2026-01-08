@@ -183,4 +183,17 @@ All colors MUST be HSL.
   .animate-glow-pulse-pink {
     animation: glow-pulse-pink 2s ease-in-out infinite;
   }
+
+  @keyframes glow-pulse-emerald {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(52, 211, 153, 0.4), 0 0 40px rgba(52, 211, 153, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(52, 211, 153, 0.6), 0 0 60px rgba(52, 211, 153, 0.3);
+    }
+  }
+
+  .animate-glow-pulse-emerald {
+    animation: glow-pulse-emerald 2s ease-in-out infinite;
+  }
 }

@@ -3,6 +3,7 @@ import { PartnersCarousel } from "@/components/sections/PartnersCarousel";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { SegurosSection } from "@/components/sections/SegurosSection";
 import { SegurosVidaSection } from "@/components/sections/SegurosVidaSection";
+import { MedicinaSection } from "@/components/sections/MedicinaSection";
 import { CredencialesSection } from "@/components/sections/CredencialesSection";
 import { AboutPreview } from "@/components/sections/AboutPreview";
 import { EnterpriseValue } from "@/components/sections/EnterpriseValue";
@@ -17,6 +18,7 @@ const Home = () => {
       <HowItWorks />
       <SegurosSection />
       <SegurosVidaSection />
+      <MedicinaSection />
       <CredencialesSection />
       <AboutPreview />
       <EnterpriseValue />

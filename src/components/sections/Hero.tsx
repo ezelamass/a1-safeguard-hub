@@ -8,9 +8,9 @@ export const Hero = () => {
     <section className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden bg-azulNoche">
       {/* Content */}
       <div className="container mx-auto px-4 py-12 z-10 relative">
-        <div className="flex items-center justify-between gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Left side - Text content */}
-          <div className="flex-1 max-w-xl">
+          <div className="flex-1 max-w-xl text-center lg:text-left">
             <motion.p
               className="text-sm md:text-base font-medium text-gray-400 mb-4 tracking-wide"
               initial={{ opacity: 0, y: 20 }}
@@ -21,7 +21,7 @@ export const Hero = () => {
             </motion.p>
 
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -30,7 +30,7 @@ export const Hero = () => {
             </motion.h1>
 
             <motion.p
-              className="text-lg md:text-xl text-gray-300 mb-10 max-w-lg"
+              className="text-base md:text-xl text-gray-300 mb-8 lg:mb-10 max-w-lg mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -39,7 +39,7 @@ export const Hero = () => {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
@@ -49,7 +49,7 @@ export const Hero = () => {
               </Button>
               <Link 
                 to="/nosotros" 
-                className="text-white font-medium flex items-center gap-2 hover:text-primary-300 transition-colors"
+                className="text-white font-medium flex items-center justify-center lg:justify-start gap-2 hover:text-primary-300 transition-colors"
               >
                 Más información
               </Link>

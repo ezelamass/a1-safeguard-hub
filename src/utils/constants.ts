@@ -55,12 +55,12 @@ export const HOW_IT_WORKS_STEPS = [
   {
     number: 2,
     title: "Comparamos por Vos",
-    description: "Analizamos las mejores opciones del mercado",
+    description: "Analizamos las mejores opciones de Coberturas y Costos del mercado.",
   },
   {
     number: 3,
     title: "Contratás Seguro",
-    description: "Elegís y activás tu cobertura en el momento",
+    description: "Elegís dentro de las opciones, nos das el OK y emitimos tu póliza.",
   },
 ];
 

@@ -33,9 +33,9 @@ export const SegurosVidaSection = () => {
   const { ref, inView } = useScrollAnimation(0.2);
 
   return (
-    <section ref={ref} className="py-24 bg-gradient-to-br from-violet-900 via-purple-900 to-indigo-900 relative overflow-hidden">
+    <section ref={ref} className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-64 h-64 bg-a1violet rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-a1pink rounded-full blur-3xl" />
       </div>
@@ -49,22 +49,22 @@ export const SegurosVidaSection = () => {
         >
           {/* Badge */}
           <motion.div variants={fadeInUp} className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-900/90 to-violet-800/90 border border-white/50 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider animate-glow-pulse-violet">
-              <Users className="w-4 h-4 text-white" />
+            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-900/90 to-violet-800/90 border border-a1violet/50 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider animate-glow-pulse-violet">
+              <Users className="w-4 h-4 text-a1violet" />
               Seguros de Vida
             </span>
           </motion.div>
 
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl lg:text-5xl font-bold text-white mb-6"
+            className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
           >
             Blindando la Estabilidad Financiera del Mañana
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
-            className="text-xl text-white/90 leading-relaxed"
+            className="text-xl text-gray-600 leading-relaxed"
           >
             Los Seguros de Personas constituyen la columna vertebral de cualquier
             planificación patrimonial seria. En A1 Broker, analizamos su perfil de
@@ -99,13 +99,13 @@ export const SegurosVidaSection = () => {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:bg-white/15 transition-all duration-300 group"
+                className="bg-white/80 backdrop-blur-md border border-a1violet/20 rounded-xl p-6 hover:bg-white hover:shadow-lg hover:shadow-a1violet/10 transition-all duration-300 group"
               >
-                <feature.icon className="w-10 h-10 text-white mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-lg font-bold text-white mb-3">
+                <feature.icon className="w-10 h-10 text-a1violet mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="text-lg font-bold text-gray-900 mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-white/80 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {feature.content}
                 </p>
               </motion.div>
@@ -119,7 +119,7 @@ export const SegurosVidaSection = () => {
           variants={fadeInUp}
           className="text-center mt-12"
         >
-          <p className="text-2xl font-bold text-white mb-8">
+          <p className="text-2xl font-bold text-gray-900 mb-8">
             Nuestra promesa es convertir la incertidumbre en un capital predecible y blindado.
           </p>
           <Button variant="primary" size="lg" asChild>

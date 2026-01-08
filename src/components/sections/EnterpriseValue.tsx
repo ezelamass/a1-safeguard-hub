@@ -63,7 +63,7 @@ export const EnterpriseValue = () => {
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-900/90 to-teal-800/90 border border-emerald-400/50 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider animate-glow-pulse-emerald">
+                        <span className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-900/90 to-teal-800/90 border border-emerald-400/50 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider animate-glow-pulse-emerald mb-6">
                             <Building2 className="w-4 h-4 text-emerald-400" />
                             Soluciones para Empresas
                         </span>

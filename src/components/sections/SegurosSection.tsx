@@ -54,7 +54,7 @@ export const SegurosSection = () => {
         >
           {/* Badge */}
           <motion.div variants={fadeInUp} className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-azulNoche/90 to-indigo-800/90 border border-accent-400/40 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
+            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-azulNoche/90 to-indigo-800/90 border border-accent-400/50 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-[0_0_20px_rgba(96,165,250,0.4),0_0_40px_rgba(96,165,250,0.2)]">
               <Building className="w-4 h-4 text-accent-400" />
               Seguros Patrimoniales
             </span>

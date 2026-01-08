@@ -53,8 +53,8 @@ export const MedicinaSection = () => {
         >
           {/* Badge */}
           <motion.div variants={fadeInUp} className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-2 bg-a1pink/10 border border-a1pink/30 text-a1pink px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wider">
-              <Heart className="w-4 h-4" />
+            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-900/90 to-pink-800/90 border border-a1pink/50 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-[0_0_20px_rgba(244,114,182,0.4),0_0_40px_rgba(244,114,182,0.2)]">
+              <Heart className="w-4 h-4 text-a1pink" />
               Medicina Prepaga
             </span>
           </motion.div>

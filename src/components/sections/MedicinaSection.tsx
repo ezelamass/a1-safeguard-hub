@@ -27,9 +27,9 @@ const features = [
   },
   {
     icon: Shield,
-    title: "Sin Preexistencias",
+    title: "Gestión Personalizada",
     content:
-      "Asesoramiento para gestionar coberturas incluso con condiciones médicas preexistentes.",
+      "Análisis de su perfil para encontrar el plan que mejor se adapte a sus necesidades y las de su familia.",
   },
 ];
 

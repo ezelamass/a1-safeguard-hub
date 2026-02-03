@@ -17,8 +17,8 @@ const credentials = [
   },
   {
     icon: Target,
-    title: "Independencia y Oferta",
-    description: "Independencia al Servicio del Cliente: Como brokers independientes, nuestro enfoque es usted. Analizamos las mejores opciones del mercado para estructurar una solución multimarca que maximice su cobertura y optimice su inversión."
+    title: "Tu Seguridad no Depende de una Marca",
+    description: "Tu Seguridad no Depende de una Marca, sino de una Buena Elección. Al ser independientes, tenemos la libertad de elegir lo mejor para usted. Evaluamos las opciones más sólidas del mercado para estructurar una cobertura inteligente: más protección por el costo justo. Una solución multimarca pensada exclusivamente para su tranquilidad."
   },
   {
     icon: Headphones,

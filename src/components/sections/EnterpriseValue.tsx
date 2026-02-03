@@ -2,46 +2,28 @@ import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Button } from '@/components/ui/button-variants';
 import {
-    Users,
-    Wallet,
     Target,
     BarChart3,
     ShieldAlert,
-    Headset,
     Calendar,
     Building2
 } from 'lucide-react';
 
 const BENEFITS = [
     {
-        icon: Users,
-        title: "Recuperación de RRHH",
-        description: "Liberá a tu personal de tareas administrativas complejas."
-    },
-    {
-        icon: Wallet,
-        title: "Sin costo adicional",
-        description: "Nuestro servicio se financia con las comisiones estándar."
-    },
-    {
         icon: Target,
-        title: "Gestión experta",
-        description: "Profesionales matriculados optimizando tus coberturas."
+        title: "Cotización y Emisión",
+        description: "Buscamos siempre la mejor opción del mercado para tu empresa."
     },
     {
         icon: BarChart3,
-        title: "Reportes mensuales",
-        description: "Control total con informes detallados de estado y costos."
+        title: "Renovaciones",
+        description: "Controlamos vencimientos proactivamente para evitar descubiertos."
     },
     {
         icon: ShieldAlert,
-        title: "Gestión de siniestros",
-        description: "Nos ocupamos de todo el proceso de reclamo por vos."
-    },
-    {
-        icon: Headset,
-        title: "Asesoría permanente",
-        description: "Canal directo para resolver dudas y urgencias."
+        title: "Gestión de Siniestros",
+        description: "Resolvemos los problemas por vos, de principio a fin."
     }
 ];
 
@@ -68,13 +50,14 @@ export const EnterpriseValue = () => {
                             Soluciones para Empresas
                         </span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                            Recuperá recursos humanos para tu productividad
+                            Convertí la gestión de Seguros en tiempo productivo
                         </h2>
                         <p className="text-xl text-gray-300 leading-relaxed">
-                            ¿Sabías que podés recuperar <span className="text-white font-semibold">1-2 empleados</span> que dedican tiempo a gestionar seguros?
-                            Dejá los seguros en manos expertas sin pagar un sueldo extra.
-                            Nosotros administramos <span className="text-accent-400 font-bold">TODO</span>: cotización, emisión, renovación y siniestros.
-                            Tu equipo se enfoca en lo que realmente importa: <span className="text-white font-semibold">hacer crecer tu negocio</span>.
+                            ¿Sabías que tu equipo administrativo puede estar perdiendo <span className="text-white font-semibold">cientos de horas anuales</span> gestionando pólizas?
+                            <br /><br />
+                            Liberá el talento de tu empresa de la carga burocrática y recuperá esa productividad para lo que realmente importa: <span className="text-white font-semibold">hacer crecer tu negocio</span>.
+                            <br /><br />
+                            Nosotros nos convertimos en tu <span className="text-accent-400 font-bold">departamento de seguros externo</span> sin costo de nómina. Gestionamos el ciclo completo:
                         </p>
                     </motion.div>
                 </div>
@@ -109,8 +92,8 @@ export const EnterpriseValue = () => {
                             Agenda una reunión
                         </a>
                     </Button>
-                    <p className="text-gray-500 text-sm mt-4">
-                        Consulta gratuita de 15 minutos para evaluar tus necesidades.
+                    <p className="text-gray-400 text-base mt-4">
+                        Dejá los Seguros en manos expertas y enfocate en tu estrategia.
                     </p>
                 </motion.div>
             </div>

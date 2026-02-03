@@ -120,7 +120,7 @@ export const SegurosVidaSection = () => {
           className="text-center mt-12"
         >
           <p className="text-2xl font-bold text-gray-900 mb-8">
-            Nuestra promesa es convertir la incertidumbre en un capital predecible y blindado.
+            Nuestra promesa es convertir tu inversión en un Capital rentable, predecible y Seguro.
           </p>
           <Button variant="primary" size="lg" asChild>
             <Link to="/cotizar">

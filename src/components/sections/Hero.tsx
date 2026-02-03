@@ -17,7 +17,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Solución de seguros líder en Argentina
+              Administradora de Seguros líder en Argentina
             </motion.p>
 
             <motion.h1
@@ -45,7 +45,7 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               <Button variant="primary" size="lg" asChild>
-                <Link to="/cotizar">Cotizar Ahora</Link>
+                <a href="tel:+5491133258129">Llamanos</a>
               </Button>
               <Link 
                 to="/nosotros" 

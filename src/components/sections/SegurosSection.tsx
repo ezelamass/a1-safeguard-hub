@@ -71,9 +71,7 @@ export const SegurosSection = () => {
             variants={fadeInUp}
             className="text-xl text-white/90 leading-relaxed"
           >
-            En A1 Broker, elevamos el estándar del asesoramiento tradicional. Nuestra labor como consultores de nivel Premium es proyectar la arquitectura de protección más robusta y eficiente para su capital.
-            <br /><br />
-            No operamos bajo una lógica de intermediación; actuamos como Analistas de Riesgo. Transformamos la incertidumbre en una estructura de certezas técnicas.
+            Somos analistas de riesgos. Transformamos la incertidumbre en una estructura sólida de Certezas Técnicas.
           </motion.p>
         </motion.div>
 

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button-variants";
 import { Link } from "react-router-dom";
 import { TripleCarousel } from "./TripleCarousel";
+import { CheckCircle2, Clock } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -53,6 +54,27 @@ export const Hero = () => {
               >
                 Más información
               </Link>
+            </motion.div>
+
+            {/* Valor Agregado - Mini Benefits */}
+            <motion.div
+              className="mt-8 lg:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+            >
+              <div className="flex items-center gap-2 text-sm text-gray-300">
+                <CheckCircle2 className="w-4 h-4 text-accent-400 flex-shrink-0" />
+                <span><strong className="text-white">Sin costos de gestión</strong></span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-300">
+                <CheckCircle2 className="w-4 h-4 text-accent-400 flex-shrink-0" />
+                <span><strong className="text-white">Multimarca</strong></span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-300">
+                <Clock className="w-4 h-4 text-accent-400 flex-shrink-0" />
+                <span><strong className="text-white">Respuesta en 10'</strong></span>
+              </div>
             </motion.div>
           </div>
 

@@ -71,7 +71,7 @@ export const FAQ_DATA = [
   },
   {
     question: "¿El servicio de A1 Bróker tiene un costo adicional para mí?",
-    answer: "No. Nuestra remuneración se basa en comisiones que ya están incluidas en el precio final de la póliza, tal como lo haría cualquier aseguradora. Al contratarnos, usted obtiene asesoramiento experto y gestión de siniestros sin pagar un extra, asegurando que su póliza siempre esté optimizada.",
+    answer: "No. Nuestra remuneración se basa en comisiones acordadas con las Cías aseguradoras. Al contratarnos, usted obtiene asesoramiento experto y gestión de siniestros sin pagar un extra, asegurando que su póliza siempre esté optimizada.",
   },
   {
     question: "¿Cómo debo proceder en caso de tener un siniestro?",
@@ -103,6 +103,60 @@ export const FAQ_DATA = [
   },
   {
     question: "Si viajo dentro o fuera del país, ¿mi Prepaga me cubre la atención médica?",
-    answer: "El copago es un monto fijo y reducido que usted abona por algunas prestaciones médicas (consultas o estudios). Los planes con copago suelen ser más económicos en la cuota mensual, pero implican un pequeño gasto cada vez que se utiliza el servicio. Los planes sin copago tienen una cuota más alta, pero no generan gastos extras por el uso.",
+    answer: "¡Atención!: En la mayoría de los casos, debes activar la cobertura antes de salir del país desde la App de tu prepaga. 💡 Mi consejo: Antes de viajar, consultanos. Nosotros revisamos tu plan y te confirmamos si estás cubierto o si necesitás una extensión para viajar 100% tranquilo.",
+  },
+];
+
+// Categorías de coberturas organizadas
+export const COVERAGE_CATEGORIES = [
+  {
+    category: "Movilidad",
+    icon: "Car",
+    items: [
+      { name: "Autos", icon: "🚗", description: "Cobertura integral para tu vehículo particular" },
+      { name: "Motos", icon: "🏍️", description: "Protección completa para motos de todo tipo" },
+      { name: "Bicicletas y Monopatines", icon: "🚲", description: "Seguros para movilidad urbana sustentable" },
+      { name: "Flotas", icon: "🚛", description: "Gestión integral de flotas empresariales" },
+      { name: "Embarcaciones de Placer", icon: "🚤", description: "Cobertura para lanchas, veleros y yates" },
+    ]
+  },
+  {
+    category: "Empresas y Trabajo",
+    icon: "Briefcase",
+    items: [
+      { name: "ART", icon: "👷", description: "Aseguradora de Riesgos del Trabajo" },
+      { name: "Accidentes Personales", icon: "👤", description: "Cobertura ante accidentes laborales y personales" },
+      { name: "Integral de Comercio", icon: "🛍️", description: "Protección completa para tu negocio" },
+      { name: "Responsabilidad Civil", icon: "⚖️", description: "Cobertura ante daños a terceros" },
+      { name: "Cauciones", icon: "📑", description: "Garantías y avales para licitaciones y contratos" },
+      { name: "Transporte de Mercaderías", icon: "🚚", description: "Seguros para transporte de carga" },
+      { name: "Todo Riesgo Operativo (TRO)", icon: "🏭", description: "Cobertura integral para operaciones industriales" },
+    ]
+  },
+  {
+    category: "Hogar y Propiedad",
+    icon: "Home",
+    items: [
+      { name: "Combinado Familiar", icon: "🏠", description: "Protección integral para tu hogar y familia" },
+      { name: "Integral de Consorcio", icon: "🏢", description: "Cobertura para edificios y consorcios" },
+      { name: "Incendio", icon: "🔥", description: "Protección contra incendio y riesgos asociados" },
+    ]
+  },
+  {
+    category: "Salud y Personas",
+    icon: "Heart",
+    items: [
+      { name: "Salud y Prepaga", icon: "🏥", description: "Acceso a la mejor atención médica" },
+      { name: "Asistencia al Viajero", icon: "✈️", description: "Cobertura médica y asistencia en viajes" },
+      { name: "Sepelio", icon: "⚱️", description: "Servicios y cobertura de sepelio familiar" },
+    ]
+  },
+  {
+    category: "Vida Urbana y Tecnología",
+    icon: "Smartphone",
+    items: [
+      { name: "Tecnología", icon: "💻", description: "Protección para notebooks, tablets y celulares" },
+      { name: "Bolso Protegido", icon: "👜", description: "Cobertura para objetos personales" },
+    ]
   },
 ];

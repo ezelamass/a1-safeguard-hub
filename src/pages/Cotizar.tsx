@@ -69,7 +69,7 @@ const Cotizar = () => {
 
     // Redirect to WhatsApp with form data
     const text = `Hola! Solicito una cotización:\n\nNombre: ${data.nombre}\nEmail: ${data.email}\nTipo: ${data.riesgo}\nMensaje: ${data.mensaje}`;
-    const whatsappUrl = `https://wa.me/5491157388695?text=${encodeURIComponent(text)}`;
+    const whatsappUrl = `https://wa.me/5491133258129?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
 
     setIsSubmitted(true);
@@ -92,7 +92,7 @@ const Cotizar = () => {
               Solicitá tu Cotización Gratuita
             </h1>
             <p className="text-xl text-gray-600">
-              Completá el formulario y un asesor te contactará en menos de 2 horas
+              Completá el formulario y un asesor te contactará en menos de 10 minutos
             </p>
           </div>
 
@@ -267,7 +267,7 @@ const Cotizar = () => {
                   <div className="bg-green-50 border-2 border-green-500 rounded-xl p-8 text-center">
                     <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">¡Solicitud Recibida!</h3>
-                    <p className="text-gray-600">Te contactaremos en las próximas 2 horas</p>
+                    <p className="text-gray-600">Te contactaremos en menos de 10 minutos (L a V de 9 a 18hs)</p>
                   </div>
                 )}
               </div>
@@ -283,7 +283,7 @@ const Cotizar = () => {
                     <CheckCircle2 className="w-6 h-6 text-accent-400 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-semibold mb-1">Respuesta Inmediata</p>
-                      <p className="text-white/80 text-sm">Te contactamos en menos de 2 horas hábiles</p>
+                      <p className="text-white/80 text-sm">Te contactamos en menos de 10 minutos (L a V de 9 a 18hs)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -317,7 +317,7 @@ const Cotizar = () => {
                 </h3>
 
                 <a
-                  href="https://wa.me/5491157388695"
+                  href="https://wa.me/5491133258129"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3.5 px-6 rounded-xl 
@@ -331,8 +331,8 @@ const Cotizar = () => {
                   <Phone className="w-5 h-5 text-primary-600 flex-shrink-0" />
                   <div>
                     <p className="text-sm text-gray-600">Llamanos</p>
-                    <a href="tel:+5491157388695" className="text-lg font-bold text-gray-900 hover:text-primary-600">
-                      +54 9 11 5738-8695
+                    <a href="tel:+5491133258129" className="text-lg font-bold text-gray-900 hover:text-primary-600">
+                      +54 9 11 3325-8129
                     </a>
                   </div>
                 </div>

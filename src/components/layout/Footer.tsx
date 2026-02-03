@@ -77,20 +77,20 @@ export const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contacto</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
-                <Mail className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                <a href="mailto:info@a1broker.com" className="text-gray-400 hover:text-white transition-colors">
-                  info@a1broker.com
+                <Phone className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                <a href="https://wa.me/5491133258129" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                  WhatsApp: 113-325-8129
                 </a>
               </li>
               <li className="flex items-start space-x-3">
-                <Phone className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                <a href="tel:+5491112345678" className="text-gray-400 hover:text-white transition-colors">
-                  +54 9 11 1234-5678
+                <Mail className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                <a href="mailto:comercial@a1broker.com.ar" className="text-gray-400 hover:text-white transition-colors">
+                  comercial@a1broker.com.ar
                 </a>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">Buenos Aires, Argentina</span>
+                <span className="text-gray-400">Juan M Fragio 175 ofic 3<br />Edificio "Los Naranjos" - Ituzaingó</span>
               </li>
             </ul>
           </div>

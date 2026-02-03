@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 const Contacto = () => {
   const handleWhatsApp = () => {
     const message = "Hola! Me gustaría recibir asesoramiento sobre seguros.";
-    window.open(`https://wa.me/5491157388695?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/5491133258129?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const handleCall = () => {
-    window.open("tel:+5491157388695", "_self");
+    window.open("tel:+5491133258129", "_self");
   };
 
   return (
@@ -67,7 +67,7 @@ const Contacto = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Llamanos</p>
-                    <p className="text-lg font-bold text-gray-900">+54 9 11 5738-8695</p>
+                    <p className="text-lg font-bold text-gray-900">+54 9 11 3325-8129</p>
                   </div>
                 </div>
 
@@ -98,7 +98,7 @@ const Contacto = () => {
               <div className="space-y-6">
                 {/* Email */}
                 <a 
-                  href="mailto:info@a1broker.com.ar"
+                  href="mailto:comercial@a1broker.com.ar"
                   className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors"
                 >
                   <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center">
@@ -106,7 +106,7 @@ const Contacto = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Email</p>
-                    <p className="text-lg font-bold text-gray-900">info@a1broker.com.ar</p>
+                    <p className="text-lg font-bold text-gray-900">comercial@a1broker.com.ar</p>
                   </div>
                 </a>
 
@@ -143,10 +143,10 @@ const Contacto = () => {
             className="text-center bg-gradient-to-br from-azulNoche to-primary-900 rounded-2xl p-8 lg:p-12 text-white"
           >
             <h2 className="text-2xl lg:text-3xl font-bold mb-4">
-              Respuesta garantizada en menos de 2 horas
+              Respuesta garantizada en menos de 10 minutos
             </h2>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              Nuestro equipo de asesores está listo para ayudarte a encontrar la mejor cobertura para vos y tu familia.
+              Nuestro equipo de asesores está listo para ayudarte a encontrar la mejor cobertura para vos y tu familia. Horario laboral: L a V de 9 a 18hs.
             </p>
           </motion.div>
         </div>

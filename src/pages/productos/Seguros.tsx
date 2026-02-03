@@ -148,7 +148,7 @@ export default function Seguros() {
             </div>
 
             <p className="text-sm text-white/70 mt-6">
-              Respuesta en menos de 2 horas • Sin costo ni compromiso
+              Respuesta en menos de 10 minutos • Sin costo ni compromiso
             </p>
           </motion.div>
         </div>

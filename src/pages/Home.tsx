@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { PartnersCarousel } from "@/components/sections/PartnersCarousel";
 import { HowItWorks } from "@/components/sections/HowItWorks";
+import { CoverageCategories } from "@/components/sections/CoverageCategories";
 import { SegurosSection } from "@/components/sections/SegurosSection";
 import { SegurosVidaSection } from "@/components/sections/SegurosVidaSection";
 import { MedicinaSection } from "@/components/sections/MedicinaSection";
@@ -15,6 +16,7 @@ const Home = () => {
       <Hero />
       <PartnersCarousel />
       <HowItWorks />
+      <CoverageCategories />
       <SegurosSection />
       <SegurosVidaSection />
       <MedicinaSection />

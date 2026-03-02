@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { format } from "date-fns";
+import { es } from "date-fns/locale";
 import {
   User,
   Mail,
@@ -12,75 +14,95 @@ import {
   MessageCircle,
   Phone,
   Clock,
-  Loader2
+  Loader2,
+  CalendarIcon,
+  MapPin,
+  CreditCard,
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { QuoteFormFields } from "@/components/cotizar/QuoteFormFields";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
-  nombre: z.string()
-    .min(3, "El nombre debe tener al menos 3 caracteres")
-    .max(100, "Máximo 100 caracteres"),
-
-  email: z.string()
-    .email("Email inválido")
-    .min(5, "Email muy corto"),
-
-  riesgo: z.string()
-    .min(1, "Seleccioná un tipo de seguro"),
-
-  mensaje: z.string()
-    .min(10, "El mensaje debe tener al menos 10 caracteres")
-    .max(500, "Máximo 500 caracteres"),
-
-  terminos: z.boolean()
-    .refine(val => val === true, "Debés aceptar los términos")
+  nombre: z.string().min(3, "El nombre debe tener al menos 3 caracteres").max(100, "Máximo 100 caracteres"),
+  dni_cuit: z.string().min(7, "DNI/CUIT inválido").max(13, "DNI/CUIT inválido"),
+  localidad: z.string().min(2, "Ingresá tu localidad"),
+  codigo_postal: z.string().min(4, "Código postal inválido").max(8, "Código postal inválido"),
+  telefono: z.string().min(8, "Teléfono inválido").max(15, "Teléfono inválido"),
+  email: z.string().email("Email inválido").min(5, "Email muy corto"),
+  fecha_nacimiento: z.date({ required_error: "Ingresá tu fecha de nacimiento" }),
+  riesgo: z.string().min(1, "Seleccioná un tipo de seguro"),
+  medio_pago: z.string().min(1, "Seleccioná un medio de pago"),
+  mensaje: z.string().max(500, "Máximo 500 caracteres").optional(),
+  terminos: z.boolean().refine(val => val === true, "Debés aceptar los términos"),
 });
 
 type FormData = z.infer<typeof formSchema>;
 
+const inputClass =
+  "w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl text-base text-gray-900 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 focus:outline-none transition-all duration-200";
+
 const Cotizar = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [charCount, setCharCount] = useState(0);
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isValid, touchedFields },
-    watch
+    formState: { errors, isSubmitting, isValid },
+    watch,
+    setValue,
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues: {
-      nombre: '',
-      email: '',
-      riesgo: '',
-      mensaje: '',
-      terminos: false
-    }
+      nombre: "",
+      dni_cuit: "",
+      localidad: "",
+      codigo_postal: "",
+      telefono: "",
+      email: "",
+      riesgo: "",
+      medio_pago: "",
+      mensaje: "",
+      terminos: false,
+    },
   });
 
-  const mensaje = watch("mensaje");
-  const email = watch("email");
+  const riesgo = watch("riesgo");
+  const fechaNacimiento = watch("fecha_nacimiento");
 
   const onSubmit = async (data: FormData) => {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log("Form data:", data);
+    await new Promise(resolve => setTimeout(resolve, 1500));
 
-    // Redirect to WhatsApp with form data
-    const text = `Hola! Solicito una cotización:\n\nNombre: ${data.nombre}\nEmail: ${data.email}\nTipo: ${data.riesgo}\nMensaje: ${data.mensaje}`;
-    const whatsappUrl = `https://wa.me/5491133258129?text=${encodeURIComponent(text)}`;
-    window.open(whatsappUrl, '_blank');
+    const lines = [
+      `Hola! Solicito una cotización:`,
+      ``,
+      `*Datos personales*`,
+      `Nombre: ${data.nombre}`,
+      `DNI/CUIT: ${data.dni_cuit}`,
+      `Localidad: ${data.localidad} (CP: ${data.codigo_postal})`,
+      `Teléfono: ${data.telefono}`,
+      `Email: ${data.email}`,
+      `Fecha Nac.: ${format(data.fecha_nacimiento, "dd/MM/yyyy")}`,
+      ``,
+      `*Tipo de seguro*: ${data.riesgo}`,
+      `*Medio de pago*: ${data.medio_pago}`,
+    ];
 
+    if (data.mensaje) {
+      lines.push(``, `Mensaje: ${data.mensaje}`);
+    }
+
+    const whatsappUrl = `https://wa.me/5491133258129?text=${encodeURIComponent(lines.join("\n"))}`;
+    window.open(whatsappUrl, "_blank");
     setIsSubmitted(true);
   };
-
-  // Update character count
-  if (mensaje?.length !== charCount) {
-    setCharCount(mensaje?.length || 0);
-  }
-
-  const isEmailValid = touchedFields.email && !errors.email && email;
 
   return (
     <Layout>
@@ -102,121 +124,233 @@ const Cotizar = () => {
             <div className="lg:col-span-3">
               <div className="bg-white rounded-2xl shadow-xl p-6 lg:p-10 border-t-4 border-primary-600">
                 <h2 className="text-2xl font-bold text-gray-900 mb-8">
-                  Formulario de Contacto
+                  Formulario de Cotización
                 </h2>
 
                 {!isSubmitted ? (
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                    {/* Nombre */}
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Nombre <span className="text-red-500 text-xs">*requerido</span>
-                      </label>
-                      <div className="relative">
-                        <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                        <input
-                          {...register("nombre")}
-                          type="text"
-                          placeholder="Ingresá tu nombre completo"
-                          className={`w-full pl-12 pr-4 py-3.5 border-2 rounded-xl text-base text-gray-900 transition-all duration-200 
-                            ${errors.nombre ? 'border-red-500 focus:ring-red-100' : 'border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100'}
-                            focus:outline-none`}
-                        />
+                    {/* ═══ CABECERA ═══ */}
+                    <div className="space-y-5">
+                      <h3 className="text-lg font-bold text-gray-800 border-b pb-2">Datos personales</h3>
+
+                      {/* Nombre */}
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Nombre y Apellido / Razón Social <span className="text-red-500 text-xs">*</span>
+                        </label>
+                        <div className="relative">
+                          <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                          <input
+                            {...register("nombre")}
+                            placeholder="Ingresá tu nombre completo"
+                            className={cn(inputClass, "pl-12", errors.nombre && "border-red-500")}
+                          />
+                        </div>
+                        {errors.nombre && <p className="text-red-600 text-sm mt-1">{errors.nombre.message}</p>}
                       </div>
-                      {errors.nombre && (
-                        <p className="text-red-600 text-sm mt-1.5">{errors.nombre.message}</p>
-                      )}
+
+                      {/* DNI/CUIT + Fecha Nac */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            DNI / CUIT <span className="text-red-500 text-xs">*</span>
+                          </label>
+                          <input
+                            {...register("dni_cuit")}
+                            placeholder="Ej: 30123456"
+                            className={cn(inputClass, errors.dni_cuit && "border-red-500")}
+                          />
+                          {errors.dni_cuit && <p className="text-red-600 text-sm mt-1">{errors.dni_cuit.message}</p>}
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Fecha de nacimiento <span className="text-red-500 text-xs">*</span>
+                          </label>
+                          <Popover>
+                            <PopoverTrigger asChild>
+                              <button
+                                type="button"
+                                className={cn(
+                                  inputClass,
+                                  "flex items-center justify-between text-left",
+                                  !fechaNacimiento && "text-gray-400",
+                                  errors.fecha_nacimiento && "border-red-500"
+                                )}
+                              >
+                                {fechaNacimiento
+                                  ? format(fechaNacimiento, "dd/MM/yyyy")
+                                  : "Seleccionar fecha"}
+                                <CalendarIcon className="w-5 h-5 text-gray-400" />
+                              </button>
+                            </PopoverTrigger>
+                            <PopoverContent className="w-auto p-0" align="start">
+                              <Calendar
+                                mode="single"
+                                selected={fechaNacimiento}
+                                onSelect={(date) => date && setValue("fecha_nacimiento", date, { shouldValidate: true })}
+                                disabled={(date) => date > new Date() || date < new Date("1920-01-01")}
+                                initialFocus
+                                className={cn("p-3 pointer-events-auto")}
+                              />
+                            </PopoverContent>
+                          </Popover>
+                          {errors.fecha_nacimiento && <p className="text-red-600 text-sm mt-1">{errors.fecha_nacimiento.message}</p>}
+                        </div>
+                      </div>
+
+                      {/* Localidad + CP */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Localidad <span className="text-red-500 text-xs">*</span>
+                          </label>
+                          <div className="relative">
+                            <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                            <input
+                              {...register("localidad")}
+                              placeholder="Tu localidad"
+                              className={cn(inputClass, "pl-12", errors.localidad && "border-red-500")}
+                            />
+                          </div>
+                          {errors.localidad && <p className="text-red-600 text-sm mt-1">{errors.localidad.message}</p>}
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Código Postal <span className="text-red-500 text-xs">*</span>
+                          </label>
+                          <input
+                            {...register("codigo_postal")}
+                            placeholder="Ej: 1714"
+                            className={cn(inputClass, errors.codigo_postal && "border-red-500")}
+                          />
+                          {errors.codigo_postal && <p className="text-red-600 text-sm mt-1">{errors.codigo_postal.message}</p>}
+                        </div>
+                      </div>
+
+                      {/* Teléfono + Email */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Teléfono WhatsApp <span className="text-red-500 text-xs">*</span>
+                          </label>
+                          <div className="relative">
+                            <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                            <input
+                              {...register("telefono")}
+                              type="tel"
+                              placeholder="Ej: 1133258129"
+                              className={cn(inputClass, "pl-12", errors.telefono && "border-red-500")}
+                            />
+                          </div>
+                          {errors.telefono && <p className="text-red-600 text-sm mt-1">{errors.telefono.message}</p>}
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Email <span className="text-red-500 text-xs">*</span>
+                          </label>
+                          <div className="relative">
+                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                            <input
+                              {...register("email")}
+                              type="email"
+                              placeholder="tu@email.com"
+                              className={cn(inputClass, "pl-12", errors.email && "border-red-500")}
+                            />
+                          </div>
+                          {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>}
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Email */}
+                    {/* ═══ SELECTOR DE RIESGO ═══ */}
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Email <span className="text-red-500 text-xs">*requerido</span>
-                      </label>
-                      <div className="relative">
-                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                        <input
-                          {...register("email")}
-                          type="email"
-                          placeholder="tu@email.com"
-                          className={`w-full pl-12 pr-12 py-3.5 border-2 rounded-xl text-base text-gray-900 transition-all duration-200 
-                            ${errors.email ? 'border-red-500 focus:ring-red-100' : isEmailValid ? 'border-green-500' : 'border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100'}
-                            focus:outline-none`}
-                        />
-                        {isEmailValid && (
-                          <CheckCircle2 className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-green-500" />
-                        )}
-                      </div>
-                      {errors.email && (
-                        <p className="text-red-600 text-sm mt-1.5">{errors.email.message}</p>
-                      )}
-                    </div>
-
-                    {/* Tipo de Riesgo */}
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        ¿Qué Riesgo querés cotizar? <span className="text-red-500 text-xs">*requerido</span>
-                      </label>
+                      <h3 className="text-lg font-bold text-gray-800 border-b pb-2 mb-4">¿Qué querés cotizar?</h3>
                       <div className="relative">
                         <select
                           {...register("riesgo")}
-                          className={`w-full px-4 py-3.5 border-2 rounded-xl text-base appearance-none bg-white transition-all duration-200
-                            ${errors.riesgo ? 'border-red-500 focus:ring-red-100 text-gray-400' : 'border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 text-gray-700'}
-                            focus:outline-none`}
+                          className={cn(
+                            inputClass,
+                            "appearance-none bg-white",
+                            errors.riesgo && "border-red-500"
+                          )}
                         >
                           <option value="">Seleccioná un tipo de seguro</option>
-                          <option value="autos">🚗 Autos</option>
-                          <option value="motos">🏍️ Motos</option>
-                          <option value="transporte">🚚 Transporte</option>
-                          <option value="bicicletas">🚲 Bicicletas</option>
-                          <option value="monopatines">🛴 Monopatines</option>
-                          <option value="art">💼 ART (Riesgos del Trabajo)</option>
-                          <option value="accidentes_personales">👥 Accidentes Personales</option>
-                          <option value="integral_comercio">🏪 Integral de Comercio</option>
-                          <option value="combinado_familiar">🏠 Combinado Familiar</option>
-                          <option value="incendio">🔥 Incendio</option>
-                          <option value="responsabilidad_civil">🛡️ Responsabilidad Civil</option>
-                          <option value="cauciones">📋 Cauciones</option>
-                          <option value="tro">🏭 TRO</option>
-                          <option value="asistencia_viajero">✈️ Asistencia al Viajero</option>
-                          <option value="salud">🩺 Salud</option>
-                          <option value="sepelio">🖤 Sepelio</option>
-                          <option value="bolso_protegido">👜 Bolso Protegido</option>
-                          <option value="tecnologia">📱 Tecnología</option>
-                          <option value="embarcaciones">🛥️ Embarcaciones</option>
-                          <option value="flotas">🚛 Flotas</option>
-                          <option value="prepaga">🏥 Medicina Prepaga</option>
-                          <option value="vida">❤️ Seguro de Vida</option>
-                          <option value="otro">📦 Otro</option>
+                          <optgroup label="🚗 Movilidad">
+                            <option value="autos">Autos</option>
+                            <option value="motos">Motos</option>
+                            <option value="flotas">Flotas</option>
+                            <option value="bicicletas">Bicicletas</option>
+                            <option value="monopatines">Monopatines</option>
+                            <option value="embarcaciones">Embarcaciones</option>
+                          </optgroup>
+                          <optgroup label="🏢 Empresas y Trabajo">
+                            <option value="art">ART</option>
+                            <option value="accidentes_personales">Accidentes Personales</option>
+                            <option value="integral_comercio">Integral de Comercio</option>
+                            <option value="responsabilidad_civil">Responsabilidad Civil</option>
+                            <option value="cauciones">Cauciones</option>
+                            <option value="transporte">Transporte de Mercaderías</option>
+                            <option value="tro">Todo Riesgo Operativo (TRO)</option>
+                          </optgroup>
+                          <optgroup label="🏠 Hogar y Propiedad">
+                            <option value="combinado_familiar">Combinado Familiar</option>
+                            <option value="incendio">Incendio</option>
+                          </optgroup>
+                          <optgroup label="❤️ Salud y Personas">
+                            <option value="prepaga">Medicina Prepaga</option>
+                            <option value="asistencia_viajero">Asistencia al Viajero</option>
+                            <option value="sepelio">Sepelio</option>
+                          </optgroup>
+                          <optgroup label="📱 Vida Urbana">
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="bolso_protegido">Bolso Protegido</option>
+                          </optgroup>
+                          <optgroup label="💚 Vida">
+                            <option value="vida">Seguro de Vida</option>
+                          </optgroup>
+                          <option value="otro">Otro</option>
                         </select>
                         <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
                       </div>
-                      {errors.riesgo && (
-                        <p className="text-red-600 text-sm mt-1.5">{errors.riesgo.message}</p>
-                      )}
+                      {errors.riesgo && <p className="text-red-600 text-sm mt-1">{errors.riesgo.message}</p>}
                     </div>
 
-                    {/* Mensaje */}
+                    {/* ═══ CAMPOS CONDICIONALES ═══ */}
+                    {riesgo && (
+                      <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 space-y-4">
+                        <QuoteFormFields riesgo={riesgo} register={register} watch={watch} />
+                      </div>
+                    )}
+
+                    {/* Mensaje opcional */}
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Mensaje <span className="text-red-500 text-xs">*requerido</span>
+                        Mensaje adicional <span className="text-gray-400 text-xs">(opcional)</span>
                       </label>
                       <textarea
                         {...register("mensaje")}
-                        rows={5}
-                        placeholder="Contanos qué necesitás asegurar y cualquier detalle relevante..."
-                        className={`w-full px-4 py-3.5 border-2 rounded-xl text-base text-gray-900 resize-none transition-all duration-200
-                          ${errors.mensaje ? 'border-red-500 focus:ring-red-100' : 'border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100'}
-                          focus:outline-none`}
+                        rows={3}
+                        placeholder="Contanos cualquier detalle relevante..."
+                        className={cn(inputClass, "resize-none")}
                       />
-                      <div className="flex justify-between items-center mt-1.5">
-                        {errors.mensaje && (
-                          <p className="text-red-600 text-sm">{errors.mensaje.message}</p>
-                        )}
-                        <p className={`text-sm ml-auto ${charCount > 500 ? 'text-red-500' : 'text-gray-400'}`}>
-                          {charCount}/500 caracteres
-                        </p>
+                    </div>
+
+                    {/* ═══ CIERRE ═══ */}
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-800 border-b pb-2 mb-4">Medio de pago preferido</h3>
+                      <div className="relative">
+                        <CreditCard className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        <select
+                          {...register("medio_pago")}
+                          className={cn(inputClass, "appearance-none bg-white pl-12", errors.medio_pago && "border-red-500")}
+                        >
+                          <option value="">Seleccioná medio de pago</option>
+                          <option value="debito_cbu">Débito Automático (CBU)</option>
+                          <option value="tarjeta_credito">Tarjeta de Crédito</option>
+                        </select>
+                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
                       </div>
+                      {errors.medio_pago && <p className="text-red-600 text-sm mt-1">{errors.medio_pago.message}</p>}
                     </div>
 
                     {/* Términos */}
@@ -231,11 +365,9 @@ const Cotizar = () => {
                         Acepto la <a href="#" className="text-primary-600 hover:underline">Política de Privacidad</a> y autorizo a ser contactado
                       </label>
                     </div>
-                    {errors.terminos && (
-                      <p className="text-red-600 text-sm">{errors.terminos.message}</p>
-                    )}
+                    {errors.terminos && <p className="text-red-600 text-sm">{errors.terminos.message}</p>}
 
-                    {/* Submit Button */}
+                    {/* Submit */}
                     <button
                       type="submit"
                       disabled={isSubmitting || !isValid}
@@ -257,7 +389,6 @@ const Cotizar = () => {
                       )}
                     </button>
 
-                    {/* Security Message */}
                     <div className="text-center text-sm text-gray-500 mt-4 flex items-center justify-center gap-2">
                       <Shield className="w-4 h-4 text-gray-400" />
                       Tus datos están protegidos. No compartimos tu información.
@@ -315,7 +446,6 @@ const Cotizar = () => {
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
                   ¿Preferís contacto directo?
                 </h3>
-
                 <a
                   href="https://wa.me/5491133258129"
                   target="_blank"
@@ -326,7 +456,6 @@ const Cotizar = () => {
                   <MessageCircle className="w-5 h-5" />
                   Chateá por WhatsApp
                 </a>
-
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-primary-600 flex-shrink-0" />
                   <div>
@@ -336,7 +465,6 @@ const Cotizar = () => {
                     </a>
                   </div>
                 </div>
-
                 <div className="mt-4 pt-4 border-t flex items-center gap-2">
                   <Clock className="w-4 h-4 text-gray-400" />
                   <p className="text-sm text-gray-600">Lun a Vie: 9 a 18hs</p>

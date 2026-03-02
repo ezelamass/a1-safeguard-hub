@@ -51,7 +51,7 @@ export const CoverageCategories = () => {
                 className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100"
               >
                 {/* Category Header */}
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-3">
                   <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
                     <CategoryIcon className="w-6 h-6 text-primary-600" />
                   </div>
@@ -59,6 +59,13 @@ export const CoverageCategories = () => {
                     {category.category}
                   </h3>
                 </div>
+
+                {/* Section Description */}
+                {(category as any).sectionDescription && (
+                  <p className="text-gray-600 text-sm md:text-base mb-6 leading-relaxed max-w-3xl">
+                    {(category as any).sectionDescription}
+                  </p>
+                )}
 
                 {/* Items Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

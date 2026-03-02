@@ -27,7 +27,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Seguros a tu medida
+              Cobertura a tu medida
             </motion.h1>
 
             <motion.p
@@ -58,21 +58,21 @@ export const Hero = () => {
 
             {/* Valor Agregado - Mini Benefits */}
             <motion.div
-              className="mt-8 lg:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4"
+              className="mt-8 lg:mt-10 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
             >
-              <div className="flex items-center gap-2 text-sm text-gray-300">
-                <CheckCircle2 className="w-4 h-4 text-accent-400 flex-shrink-0" />
+              <div className="flex flex-col items-center text-center gap-2 text-sm text-gray-300">
+                <CheckCircle2 className="w-5 h-5 text-accent-400" />
                 <span><strong className="text-white">Sin costos de gestión</strong></span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-300">
-                <CheckCircle2 className="w-4 h-4 text-accent-400 flex-shrink-0" />
+              <div className="flex flex-col items-center text-center gap-2 text-sm text-gray-300">
+                <CheckCircle2 className="w-5 h-5 text-accent-400" />
                 <span><strong className="text-white">Multimarca</strong></span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-300">
-                <Clock className="w-4 h-4 text-accent-400 flex-shrink-0" />
+              <div className="flex flex-col items-center text-center gap-2 text-sm text-gray-300">
+                <Clock className="w-5 h-5 text-accent-400" />
                 <span><strong className="text-white">Respuesta en 10'</strong></span>
               </div>
             </motion.div>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button-variants";
-import { Link } from "react-router-dom";
 import { ArrowRight, Users, PiggyBank, TrendingUp, Heart } from "lucide-react";
+import { buildWhatsAppUrl } from "@/utils/whatsapp";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { fadeInUp, staggerContainer } from "@/utils/animations";
 import segurosVidaImg from "@/assets/seguros-vida.jpg";
@@ -66,10 +66,7 @@ export const SegurosVidaSection = () => {
             variants={fadeInUp}
             className="text-xl text-gray-600 leading-relaxed"
           >
-            Los Seguros de Personas constituyen la columna vertebral de cualquier
-            planificación patrimonial seria. En A1 Broker, analizamos su perfil de
-            riesgo y sus objetivos a largo plazo para estructurar una protección
-            que garantice la continuidad del ingreso y el estatus económico familiar.
+            Tu futuro y el de tu familia, asegurados. Planificá con tranquilidad. Analizamos tu perfil para garantizar que, pase lo que pase, tu familia mantenga su nivel de vida y estabilidad económica.
           </motion.p>
         </motion.div>
 
@@ -120,13 +117,17 @@ export const SegurosVidaSection = () => {
           className="text-center mt-12"
         >
           <p className="text-2xl font-bold text-gray-900 mb-8">
-            Nuestra promesa es convertir tu inversión en un Capital rentable, predecible y Seguro.
+            Nuestra promesa es convertir tu inversión en un capital Rentable, Predecible y Seguro.
           </p>
           <Button variant="primary" size="lg" asChild>
-            <Link to="/cotizar">
+            <a
+              href={buildWhatsAppUrl("Seguros de Vida y Retiro")}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Consultoría Personalizada
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </a>
           </Button>
         </motion.div>
       </div>

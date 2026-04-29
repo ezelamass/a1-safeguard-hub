@@ -112,7 +112,7 @@ export const COVERAGE_CATEGORIES = [
   {
     category: "Movilidad",
     icon: "Car",
-    sectionDescription: "Tu libertad, siempre protegida. No solo aseguramos tu vehículo; protegemos tu tranquilidad en cada kilómetro. Ya sea un auto particular, una flota comercial o tu moto de fin de semana, en A1 Broker diseñamos coberturas a medida con las mejores compañías del mercado. Robos, accidentes o asistencia mecánica: estamos con vos cuando más nos necesitás. Plus A1: Gestión ágil de siniestros y asesoramiento en el acto.",
+    sectionDescription: "En A1 Broker diseñamos coberturas a medida para autos, motos y flotas. Te respaldamos ante robos o accidentes con las mejores compañías y gestión de siniestros al instante.",
     items: [
       { name: "Autos", icon: "🚗", description: "Cobertura integral para tu vehículo particular" },
       { name: "Motos", icon: "🏍️", description: "Protección completa para motos de todo tipo" },
@@ -138,7 +138,7 @@ export const COVERAGE_CATEGORIES = [
   {
     category: "Hogar y Propiedad",
     icon: "Home",
-    sectionDescription: "Tu refugio, nuestro compromiso. Tu casa es mucho más que paredes; es tu esfuerzo y el de tu familia. Te ofrecemos una protección integral que va desde incendio y robo hasta daños por agua y cristales. Además, incluimos servicios de asistencia domiciliaria (plomería, electricidad y cerrajería) para que nunca te sientas solo.",
+    sectionDescription: "Tu hogar, protegido integralmente. Aseguramos tu esfuerzo con coberturas ante incendio, robo, daños por agua y cristales. Además, contás con asistencia domiciliaria 24h (plomería, electricidad y cerrajería) para tu total tranquilidad.",
     items: [
       { name: "Combinado Familiar", icon: "🏠", description: "Protección integral para tu hogar y familia" },
       { name: "Integral de Consorcio", icon: "🏢", description: "Cobertura para edificios y consorcios" },
@@ -148,7 +148,7 @@ export const COVERAGE_CATEGORIES = [
   {
     category: "Salud y Personas",
     icon: "Heart",
-    sectionDescription: "Cuidamos a los que hacen crecer tu proyecto. Cumplir con la ley es solo el principio. Gestionamos tu ART y seguros de Accidentes Personales para trabajadores independientes o personal doméstico, garantizando la mejor atención prestacional y el respaldo financiero ante cualquier eventualidad laboral.",
+    sectionDescription: "Respaldo total para tu equipo y proyectos. Gestionamos tu ART y Seguros de Accidentes Personales para independientes, personal doméstico o empresas. Garantizamos cumplimiento legal, atención médica inmediata y respaldo financiero ante cualquier imprevisto laboral.",
     items: [
       { name: "Salud y Prepaga", icon: "🏥", description: "Acceso a la mejor atención médica" },
       { name: "Asistencia al Viajero", icon: "✈️", description: "Cobertura médica y asistencia en viajes" },
@@ -158,7 +158,7 @@ export const COVERAGE_CATEGORIES = [
   {
     category: "Vida Urbana y Tecnología",
     icon: "Smartphone",
-    sectionDescription: "Protección para tu estilo de vida. Desde el celular que llevás en la mano hasta el bolso con el que vas a trabajar. Y si te vas de viaje, nuestra Asistencia al Viajero te acompaña en todo el mundo. Pequeñas cuotas para grandes soluciones ante los imprevistos del día a día.",
+    sectionDescription: "Protección para tu día a día. Aseguramos lo que llevás con vos: celular, bolso y tecnología. Además, viajá tranquilo con nuestra Asistencia al Viajero internacional. Soluciones integrales frente a imprevistos, en cuotas accesibles.",
     items: [
       { name: "Tecnología", icon: "💻", description: "Protección para notebooks, tablets y celulares" },
       { name: "Bolso Protegido", icon: "👜", description: "Cobertura para objetos personales" },

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Shield, FileCheck, Scale, Users, Building } from "lucide-react";
 import { Button } from "@/components/ui/button-variants";
-import { Link } from "react-router-dom";
+import { buildWhatsAppUrl } from "@/utils/whatsapp";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { fadeInUp, staggerContainer } from "@/utils/animations";
 const pillars = [
@@ -71,7 +71,7 @@ export const SegurosSection = () => {
             variants={fadeInUp}
             className="text-xl text-white/90 leading-relaxed"
           >
-            Somos analistas de riesgos. Transformamos la incertidumbre en una estructura sólida de Certezas Técnicas.
+            Somos Analistas de Riesgos. Transformamos la incertidumbre en una estructura sólida de Certezas Técnicas.
           </motion.p>
         </motion.div>
 
@@ -105,12 +105,14 @@ export const SegurosSection = () => {
           <p className="text-2xl font-bold text-white mb-8">
             En A1 Broker, usted invierte en certidumbre.
           </p>
-          <Button
-            variant="primary"
-            size="lg"
-            asChild
-          >
-            <Link to="/cotizar">Cotizar Mis Seguros</Link>
+          <Button variant="primary" size="lg" asChild>
+            <a
+              href={buildWhatsAppUrl("Seguros Patrimoniales")}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Cotizar Mis Seguros
+            </a>
           </Button>
         </motion.div>
       </div>

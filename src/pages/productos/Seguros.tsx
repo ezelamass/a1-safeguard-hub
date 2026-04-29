@@ -1,18 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button-variants";
-import { CheckCircle2, MessageCircle, Phone } from "lucide-react";
+import { CheckCircle2, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { buildWhatsAppUrl } from "@/utils/whatsapp";
 
 export default function Seguros() {
   const { type } = useParams();
-  
-  const typeName = type?.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ") || "Seguro";
 
-  const handleWhatsApp = () => {
-    const message = `Hola! Me interesa cotizar un seguro de ${typeName}`;
-    window.open(`https://wa.me/5491133258129?text=${encodeURIComponent(message)}`, "_blank");
-  };
+  const typeName = type?.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ") || "Seguro";
+  const waUrl = buildWhatsAppUrl(`un seguro de ${typeName}`);
 
   return (
     <Layout>
@@ -117,38 +114,22 @@ export default function Seguros() {
             transition={{ delay: 0.4 }}
             className="bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl shadow-xl p-8 lg:p-12 text-center text-white"
           >
-            <h2 className="text-3xl font-bold mb-4">
-              ¿Querés cotizar este seguro?
-            </h2>
+            <h2 className="text-3xl font-bold mb-4">¿Querés cotizar este seguro?</h2>
             <p className="text-xl mb-8 text-white/90">
-              Contactanos ahora y obtené la mejor cobertura al mejor precio
+              Contactanos por WhatsApp y obtené la mejor cobertura al mejor precio
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
-              <Button
-                variant="hero"
-                size="lg"
-                onClick={handleWhatsApp}
-                className="flex-1"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Consultar por WhatsApp
-              </Button>
-              <Button
-                variant="hero"
-                size="lg"
-                asChild
-                className="flex-1"
-              >
-                <Link to="/cotizar">
-                  <Phone className="w-5 h-5" />
-                  Completar Formulario
-                </Link>
+            <div className="flex justify-center max-w-2xl mx-auto">
+              <Button variant="hero" size="lg" asChild>
+                <a href={waUrl} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-5 h-5" />
+                  Consultar por WhatsApp
+                </a>
               </Button>
             </div>
 
             <p className="text-sm text-white/70 mt-6">
-              Respuesta en menos de 10 minutos • Sin costo ni compromiso
+              Te ayudamos a elegir tu cobertura. Te respondemos en el momento. Atención: L a V de 9 a 18 h.
             </p>
           </motion.div>
         </div>

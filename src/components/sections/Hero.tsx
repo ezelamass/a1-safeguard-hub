@@ -36,7 +36,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              Encontrá la cobertura que necesitás con una experiencia simple, rápida y confiable.
+              Encontrá la cobertura que necesitás con una experiencia Simple, Rápida y Confiable.
             </motion.p>
 
             <motion.div
@@ -46,7 +46,13 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               <Button variant="primary" size="lg" asChild>
-                <a href="tel:+5491133258129">Llamanos</a>
+                <a
+                  href={`https://wa.me/5491133258129?text=${encodeURIComponent("Hola, estuve viendo los servicios de A1 Broker y estoy interesado en conocer las coberturas.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Llamanos
+                </a>
               </Button>
               <Link 
                 to="/nosotros" 

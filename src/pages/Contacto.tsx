@@ -117,8 +117,8 @@ const Contacto = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Oficina</p>
-                    <p className="text-lg font-semibold text-gray-900">Buenos Aires, Argentina</p>
-                    <p className="text-sm text-gray-500 mt-1">Atención con cita previa</p>
+                    <p className="text-lg font-semibold text-gray-900">Juan Manuel Fragio 175 PB 3</p>
+                    <p className="text-sm text-gray-700">Edif. "Los Naranjos" — Ituzaingó Norte</p>
                   </div>
                 </div>
 
@@ -127,8 +127,15 @@ const Contacto = () => {
                   <p className="text-center text-gray-600 mb-4">
                     ¿Querés una cotización personalizada?
                   </p>
-                  <Button variant="outline" size="lg" fullWidth asChild>
-                    <a href="/cotizar">Completar formulario de cotización</a>
+                  <Button variant="primary" size="lg" fullWidth asChild>
+                    <a
+                      href={`https://wa.me/5491133258129?text=${encodeURIComponent("Hola, estuve viendo los servicios de A1 Broker y estoy interesado en información general.")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      Cotizar por WhatsApp
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -143,10 +150,10 @@ const Contacto = () => {
             className="text-center bg-gradient-to-br from-azulNoche to-primary-900 rounded-2xl p-8 lg:p-12 text-white"
           >
             <h2 className="text-2xl lg:text-3xl font-bold mb-4">
-              Respuesta garantizada en menos de 10 minutos
+              Te respondemos en el momento
             </h2>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              Nuestro equipo de asesores está listo para ayudarte a encontrar la mejor cobertura para vos y tu familia. Horario laboral: L a V de 9 a 18hs.
+              Te ayudamos a elegir tu cobertura. Consultanos ahora para no perder tiempo. Atención: L a V de 9 a 18 h.
             </p>
           </motion.div>
         </div>

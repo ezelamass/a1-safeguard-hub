@@ -86,12 +86,24 @@ export const EnterpriseValue = () => {
                     transition={{ duration: 0.6, delay: 0.8 }}
                     className="text-center"
                 >
-                    <Button variant="primary" size="lg" className="text-lg px-8 py-6 shadow-xl shadow-primary-900/20" asChild>
-                        <a href="https://calendly.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                            <Calendar className="w-5 h-5" />
-                            Agenda una reunión
-                        </a>
-                    </Button>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button variant="primary" size="lg" className="text-lg px-8 py-6 shadow-xl shadow-primary-900/20" asChild>
+                          <a href="https://calendly.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                              <Calendar className="w-5 h-5" />
+                              Agenda una reunión
+                          </a>
+                      </Button>
+                      <Button variant="whatsapp" size="lg" className="text-lg px-8 py-6" asChild>
+                          <a
+                            href={`https://wa.me/5491133258129?text=${encodeURIComponent("Hola, estuve viendo los servicios de A1 Broker y estoy interesado en soluciones para empresas.")}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2"
+                          >
+                              Consultar por WhatsApp
+                          </a>
+                      </Button>
+                    </div>
                     <p className="text-gray-400 text-base mt-4">
                         Dejá los Seguros en manos expertas y enfocate en tu estrategia.
                     </p>

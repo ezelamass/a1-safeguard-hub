@@ -119,10 +119,15 @@ const MedicinaPrivada = () => {
                 className="mt-8"
               >
                 <Button variant="primary" size="lg" asChild>
-                  <Link to="/cotizar" className="inline-flex items-center space-x-2">
-                    <span>ANÁLISIS GRATUITO: Solicite una Consultoría</span>
+                  <a
+                    href={`https://wa.me/5491133258129?text=${encodeURIComponent("Hola, estuve viendo los servicios de A1 Broker y estoy interesado en Medicina Prepaga.")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2"
+                  >
+                    <span>Consultar por WhatsApp</span>
                     <ArrowRight className="w-5 h-5" />
-                  </Link>
+                  </a>
                 </Button>
               </motion.div>
             </motion.div>

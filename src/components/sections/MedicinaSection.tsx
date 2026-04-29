@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Heart, Stethoscope, Clock, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button-variants";
-import { Link } from "react-router-dom";
+import { buildWhatsAppUrl } from "@/utils/whatsapp";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { fadeInUp, staggerContainer } from "@/utils/animations";
 import medicinaImg from "@/assets/medicina-privada.jpg";
@@ -70,10 +70,7 @@ export const MedicinaSection = () => {
             variants={fadeInUp}
             className="text-xl text-white/90 leading-relaxed"
           >
-            En A1 Broker, gestionamos su acceso a los planes de salud más
-            completos del mercado. Comparamos, negociamos y le garantizamos
-            la cobertura médica que usted y su familia merecen, con el respaldo
-            de las principales prepagas del país.
+            No des más vueltas con tu prepaga. Comparamos las mejores opciones del mercado para que tengas la cartilla médica que necesitás al mejor precio.
           </motion.p>
         </motion.div>
 
@@ -124,7 +121,13 @@ export const MedicinaSection = () => {
           className="text-center mt-12"
         >
           <Button variant="primary" size="lg" asChild>
-            <Link to="/cotizar">Cotizar Mi Plan de Salud</Link>
+            <a
+              href={buildWhatsAppUrl("Medicina Prepaga")}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Cotizar Mi Plan de Salud
+            </a>
           </Button>
         </motion.div>
       </div>

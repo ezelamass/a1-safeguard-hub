@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 export const WhatsAppButton = () => {
   // Format: +54 9 11 3325-8129 -> 5491133258129
   const whatsappNumber = "5491133258129";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+  const message = "Hola, estuve viendo los servicios de A1 Broker y estoy interesado en información general.";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   return (
     <motion.a

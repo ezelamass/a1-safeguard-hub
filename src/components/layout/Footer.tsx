@@ -33,9 +33,14 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/cotizar" className="text-gray-400 hover:text-white transition-colors">
+                <a
+                  href={`https://wa.me/5491133258129?text=${encodeURIComponent("Hola, estuve viendo los servicios de A1 Broker y estoy interesado en cotizar un seguro.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Cotizar
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/contacto" className="text-gray-400 hover:text-white transition-colors">
@@ -90,7 +95,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">Juan M Fragio 175 ofic 3<br />Edificio "Los Naranjos" - Ituzaingó</span>
+                <span className="text-gray-400">Juan Manuel Fragio 175 PB 3<br />Edif. "Los Naranjos" - Ituzaingó Norte</span>
               </li>
             </ul>
           </div>

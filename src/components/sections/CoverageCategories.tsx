@@ -83,7 +83,7 @@ export const CoverageCategories = () => {
                           <h4 className="font-semibold text-gray-900 group-hover:text-primary-700 transition-colors">
                             {item.name}
                           </h4>
-                          <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                          <p className="text-sm text-gray-600 mt-1">
                             {item.description}
                           </p>
                         </div>
@@ -104,10 +104,10 @@ export const CoverageCategories = () => {
           className="text-center mt-12"
         >
           <p className="text-lg text-gray-600 mb-4">
-            ¿No encontrás lo que buscás? Consultanos, tenemos soluciones para cada necesidad.
+            ¿Buscás algo específico? Escribinos. Estamos acá para diseñar una solución que se adapte justo a lo que necesitás.
           </p>
           <a
-            href="https://wa.me/5491133258129"
+            href={`https://wa.me/5491133258129?text=${encodeURIComponent("Hola, estuve viendo los servicios de A1 Broker y estoy interesado en asesoramiento personalizado.")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-success hover:bg-success/90 text-white font-semibold px-8 py-4 rounded-xl transition-colors"

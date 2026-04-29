@@ -90,33 +90,8 @@ export const Header = () => {
                       </div>
                     </div>
 
-                    {/* Column 2: Medicina Prepaga */}
+                    {/* Column 2: Seguros de Vida */}
                     <div className="p-6 border-r border-white/10">
-                      <h3 className="text-sm font-bold text-white uppercase mb-4 tracking-wide flex items-center gap-2">
-                        <icons.Heart className="w-4 h-4 text-a1pink" />
-                        Medicina Prepaga
-                      </h3>
-                      <div className="space-y-2">
-                        {MEDICINA_PREPAGA_ITEMS.map((item) => (
-                          <Link
-                            key={item.path}
-                            to={item.path}
-                            onClick={() => setIsProductsOpen(false)}
-                            className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
-                          >
-                            <span className="text-gray-400 group-hover:text-a1pink transition-colors">
-                              {getIcon(item.icon)}
-                            </span>
-                            <span className="text-sm font-medium text-gray-300 group-hover:text-white">
-                              {item.name}
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Column 3: Seguros de Vida */}
-                    <div className="p-6">
                       <h3 className="text-sm font-bold text-white uppercase mb-4 tracking-wide flex items-center gap-2">
                         <icons.Users className="w-4 h-4 text-a1violet" />
                         Seguros de Vida
@@ -130,6 +105,31 @@ export const Header = () => {
                             className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
                           >
                             <span className="text-gray-400 group-hover:text-a1violet transition-colors">
+                              {getIcon(item.icon)}
+                            </span>
+                            <span className="text-sm font-medium text-gray-300 group-hover:text-white">
+                              {item.name}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Column 3: Medicina Prepaga */}
+                    <div className="p-6">
+                      <h3 className="text-sm font-bold text-white uppercase mb-4 tracking-wide flex items-center gap-2">
+                        <icons.Heart className="w-4 h-4 text-a1pink" />
+                        Medicina Prepaga
+                      </h3>
+                      <div className="space-y-2">
+                        {MEDICINA_PREPAGA_ITEMS.map((item) => (
+                          <Link
+                            key={item.path}
+                            to={item.path}
+                            onClick={() => setIsProductsOpen(false)}
+                            className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+                          >
+                            <span className="text-gray-400 group-hover:text-a1pink transition-colors">
                               {getIcon(item.icon)}
                             </span>
                             <span className="text-sm font-medium text-gray-300 group-hover:text-white">
@@ -173,7 +173,13 @@ export const Header = () => {
           {/* CTA Button Desktop */}
           <div className="hidden lg:block">
             <Button variant="primary" size="md" asChild>
-              <Link to="/cotizar">Cotizar Ahora</Link>
+              <a
+                href={`https://wa.me/5491133258129?text=${encodeURIComponent("Hola, estuve viendo los servicios de A1 Broker y estoy interesado en cotizar un seguro.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Cotizar Ahora
+              </a>
             </Button>
           </div>
 
@@ -195,72 +201,71 @@ export const Header = () => {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 bg-azulNoche z-40 lg:hidden pt-20 overflow-y-auto">
           <nav className="container mx-auto px-4 py-8 space-y-6">
-            <div className="space-y-6">
-              {/* Medicina Prepaga */}
-              <div>
-                <p className="text-sm font-semibold text-gray-400 uppercase mb-3">
-                  Medicina Prepaga
-                </p>
-                <div className="space-y-2">
-                  {MEDICINA_PREPAGA_ITEMS.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className="flex items-center space-x-2 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      <span className="text-gray-400">{getIcon(item.icon)}</span>
-                      <span className="text-sm font-medium text-gray-200">
-                        {item.name}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
+            <div className="space-y-4">
+              <p className="text-sm font-semibold text-gray-400 uppercase mb-2">Productos</p>
 
               {/* Seguros */}
-              <div>
-                <p className="text-sm font-semibold text-gray-400 uppercase mb-3">
-                  Seguros
-                </p>
-                <div className="grid grid-cols-2 gap-2">
+              <details className="group rounded-lg bg-white/5">
+                <summary className="cursor-pointer list-none flex items-center justify-between p-3 text-white font-medium">
+                  <span>Seguros</span>
+                  <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="grid grid-cols-2 gap-2 p-3 pt-0">
                   {SEGUROS_ITEMS.map((item) => (
                     <Link
                       key={item.path}
                       to={item.path}
-                      className="flex items-center space-x-2 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                      className="flex items-center space-x-2 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <span className="text-gray-400">{getIcon(item.icon)}</span>
-                      <span className="text-sm font-medium text-gray-200">
-                        {item.name}
-                      </span>
+                      <span className="text-sm font-medium text-gray-200 truncate">{item.name}</span>
                     </Link>
                   ))}
                 </div>
-              </div>
+              </details>
 
               {/* Seguros de Vida */}
-              <div>
-                <p className="text-sm font-semibold text-gray-400 uppercase mb-3">
-                  Seguros de Vida
-                </p>
-                <div className="space-y-2">
+              <details className="group rounded-lg bg-white/5">
+                <summary className="cursor-pointer list-none flex items-center justify-between p-3 text-white font-medium">
+                  <span>Seguros de Vida</span>
+                  <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="space-y-2 p-3 pt-0">
                   {SEGUROS_VIDA_ITEMS.map((item) => (
                     <Link
                       key={item.path}
                       to={item.path}
-                      className="flex items-center space-x-2 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                      className="flex items-center space-x-2 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <span className="text-gray-400">{getIcon(item.icon)}</span>
-                      <span className="text-sm font-medium text-gray-200">
-                        {item.name}
-                      </span>
+                      <span className="text-sm font-medium text-gray-200">{item.name}</span>
                     </Link>
                   ))}
                 </div>
-              </div>
+              </details>
+
+              {/* Medicina Prepaga */}
+              <details className="group rounded-lg bg-white/5">
+                <summary className="cursor-pointer list-none flex items-center justify-between p-3 text-white font-medium">
+                  <span>Medicina Prepaga</span>
+                  <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="space-y-2 p-3 pt-0">
+                  {MEDICINA_PREPAGA_ITEMS.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className="flex items-center space-x-2 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <span className="text-gray-400">{getIcon(item.icon)}</span>
+                      <span className="text-sm font-medium text-gray-200">{item.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </details>
             </div>
 
             <div className="border-t border-white/10 pt-6 space-y-4">
@@ -282,9 +287,14 @@ export const Header = () => {
 
             <div className="pt-6">
               <Button variant="primary" size="lg" fullWidth asChild>
-                <Link to="/cotizar" onClick={() => setIsMobileMenuOpen(false)}>
+                <a
+                  href={`https://wa.me/5491133258129?text=${encodeURIComponent("Hola, estuve viendo los servicios de A1 Broker y estoy interesado en cotizar un seguro.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   Cotizar Ahora
-                </Link>
+                </a>
               </Button>
             </div>
           </nav>
